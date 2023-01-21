@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //screen will be changed to the auton screen
                 Intent changeScreens = new Intent(MainActivity.this, AutonScreen.class);
                 startActivity(changeScreens);
             }

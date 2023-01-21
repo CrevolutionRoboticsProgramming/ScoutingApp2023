@@ -16,6 +16,8 @@ import android.widget.TextView;
 
 public class AutonScreen extends AppCompatActivity {
 
+// MORE IN DEPTH COMMENTS FOR REPEATED CODE IS ON HERE IN AUTON SCREEN
+
     //creating variables for everything on the .xml file
     ImageButton autonBtn1, teleopBtn1, endgameBtn1, qrcodeBtn1;
     TextView autonTitleTxt1, teleopTitleTxt1, endgameTitleTxt1, qrcodeTitleTxt1, autonTitleTxt, matchNumTitle1, teamNumTitle1, autonMatchInfoBack, scoringTitleTxt1, upperTitleTxt1, middleTitleTxt1, lowerTitleTxt1, loadsTitleTxt1, dockingTitleTxt1;
@@ -90,8 +92,10 @@ public class AutonScreen extends AppCompatActivity {
         attemptNoEngageOption1 = findViewById(R.id.ws);
         engagedOption1 = findViewById(R.id.dj);
 
+        //getting shared preferences
         sp = getSharedPreferences("TeamData", MODE_PRIVATE);
 
+        //when the screen is changed to the auton screen if there was any text or checks already inputed then they will replace the otherwise blank inputs
         SharedPreferences new_sp = getApplicationContext().getSharedPreferences("TeamData", MODE_PRIVATE);
         teamNumInput1.setText(new_sp.getString("TeamNumber", ""));
         matchNumInput1.setText(new_sp.getString("MatchNumber", ""));
@@ -103,19 +107,21 @@ public class AutonScreen extends AppCompatActivity {
         mobilityPointCheck.setChecked(new_sp.getBoolean("AutonMobilityCheck", false));
 
 
+        //creating on click events
 
-                //creating on click events
         //screen changing buttons
         autonHomeBtnPic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //when the screen is changed all inputs will be saved with shared preferences
 
+                //making the inputs into a string for the sp
                 teamNumberInputString = teamNumInput1.getText().toString();
                 matchNumberInputString = matchNumInput1.getText().toString();
                 autonUpperInputScoreString = upperInput1.getText().toString();
                 autonMiddleInputScoreString = middleInput1.getText().toString();
                 autonLowerInputScoreString = lowerInput1.getText().toString();
-
+                //check box inputs turned into a boolean
                 if (groundCheck1.isChecked()) {
                     autonGroundLoadsBoolean = true;
                 }
@@ -134,9 +140,9 @@ public class AutonScreen extends AppCompatActivity {
                 else {
                     autonMobilityPointBoolean = false;
                 }
-
+                //creating a editor for the sp and naming it editor
                 SharedPreferences.Editor editor = sp.edit();
-
+                //using the editor to store the strings and booleans in the sp (green) that can be called from other screens aswell
                 editor.putString("TeamNumber", teamNumberInputString);
                 editor.putString("MatchNumber", matchNumberInputString);
                 editor.putString("AutonUpperScore", autonUpperInputScoreString);
@@ -145,8 +151,10 @@ public class AutonScreen extends AppCompatActivity {
                 editor.putBoolean("AutonGroundCheck", autonGroundLoadsBoolean);
                 editor.putBoolean("AutonHumanCheck", autonHumanLoadsBoolean);
                 editor.putBoolean("AutonMobilityCheck", autonMobilityPointBoolean);
+                //updates all the sp
                 editor.commit();
 
+                //screen will be changed to the home screen
                 Intent goToHomeScreen = new Intent(AutonScreen.this, MainActivity.class);
                 startActivity(goToHomeScreen);
             }
@@ -154,13 +162,12 @@ public class AutonScreen extends AppCompatActivity {
         teleopBtn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //when the screen is changed all inputs will be saved with shared preferences
                 teamNumberInputString = teamNumInput1.getText().toString();
                 matchNumberInputString = matchNumInput1.getText().toString();
                 autonUpperInputScoreString = upperInput1.getText().toString();
                 autonMiddleInputScoreString = middleInput1.getText().toString();
                 autonLowerInputScoreString = lowerInput1.getText().toString();
-
                 if (groundCheck1.isChecked()) {
                     autonGroundLoadsBoolean = true;
                 }
@@ -179,9 +186,7 @@ public class AutonScreen extends AppCompatActivity {
                 else {
                     autonMobilityPointBoolean = false;
                 }
-
                 SharedPreferences.Editor editor = sp.edit();
-
                 editor.putString("TeamNumber", teamNumberInputString);
                 editor.putString("MatchNumber", matchNumberInputString);
                 editor.putString("AutonUpperScore", autonUpperInputScoreString);
@@ -192,7 +197,7 @@ public class AutonScreen extends AppCompatActivity {
                 editor.putBoolean("AutonMobilityCheck", autonMobilityPointBoolean);
                 editor.commit();
 
-
+                //screen will be changed to the teloep screen
                 Intent goToTeleopScreen = new Intent(AutonScreen.this, TeleopScreen.class);
                 startActivity(goToTeleopScreen);
             }
@@ -200,13 +205,12 @@ public class AutonScreen extends AppCompatActivity {
         endgameBtn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //when the screen is changed all inputs will be saved with shared preferences
                 teamNumberInputString = teamNumInput1.getText().toString();
                 matchNumberInputString = matchNumInput1.getText().toString();
                 autonUpperInputScoreString = upperInput1.getText().toString();
                 autonMiddleInputScoreString = middleInput1.getText().toString();
                 autonLowerInputScoreString = lowerInput1.getText().toString();
-
                 if (groundCheck1.isChecked()) {
                     autonGroundLoadsBoolean = true;
                 }
@@ -225,9 +229,7 @@ public class AutonScreen extends AppCompatActivity {
                 else {
                     autonMobilityPointBoolean = false;
                 }
-
                 SharedPreferences.Editor editor = sp.edit();
-
                 editor.putString("TeamNumber", teamNumberInputString);
                 editor.putString("MatchNumber", matchNumberInputString);
                 editor.putString("AutonUpperScore", autonUpperInputScoreString);
@@ -238,6 +240,7 @@ public class AutonScreen extends AppCompatActivity {
                 editor.putBoolean("AutonMobilityCheck", autonMobilityPointBoolean);
                 editor.commit();
 
+                //screen will be changed to endgame screen
                 Intent goToEndgameScreen = new Intent(AutonScreen.this, EndScreen.class);
                 startActivity(goToEndgameScreen);
             }
@@ -245,13 +248,12 @@ public class AutonScreen extends AppCompatActivity {
         qrcodeBtn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //when the screen is changed all inputs will be saved with shared preferences
                 teamNumberInputString = teamNumInput1.getText().toString();
                 matchNumberInputString = matchNumInput1.getText().toString();
                 autonUpperInputScoreString = upperInput1.getText().toString();
                 autonMiddleInputScoreString = middleInput1.getText().toString();
                 autonLowerInputScoreString = lowerInput1.getText().toString();
-
                 if (groundCheck1.isChecked()) {
                     autonGroundLoadsBoolean = true;
                 }
@@ -270,9 +272,7 @@ public class AutonScreen extends AppCompatActivity {
                 else {
                     autonMobilityPointBoolean = false;
                 }
-
                 SharedPreferences.Editor editor = sp.edit();
-
                 editor.putString("TeamNumber", teamNumberInputString);
                 editor.putString("MatchNumber", matchNumberInputString);
                 editor.putString("AutonUpperScore", autonUpperInputScoreString);
@@ -283,6 +283,7 @@ public class AutonScreen extends AppCompatActivity {
                 editor.putBoolean("AutonMobilityCheck", autonMobilityPointBoolean);
                 editor.commit();
 
+                //screen will be changed to the qrcomment screen
                 Intent goToQrcodeScreen = new Intent(AutonScreen.this, QRCommentsScreen.class);
                 startActivity(goToQrcodeScreen);
             }
@@ -292,17 +293,23 @@ public class AutonScreen extends AppCompatActivity {
         upperPlus1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //creating a variable for the pieces scored
                 int autonUpperPiecesScored;
 
+                //if there is noting inputed yet the variable will be set to 0
                 if(upperInput1.getText().toString().equals("")) {
                     autonUpperPiecesScored = 0;
                 } else {
+                    //if there is something inputed it will get the number and set the variable to it
                     autonUpperPiecesScored = Integer.parseInt(upperInput1.getText().toString());
                 }
                 if(autonUpperPiecesScored >= 0) {
+                    //if the number is above or = to 0 then the variable will increase by 1
                     autonUpperPiecesScored++;
                 }
+                //string created that stores the pieces scored variable (empty string needed since cant directly set a string to a variable)
                 String autonUpperPiecesString = "" + autonUpperPiecesScored;
+                //setting the input to the string storing the pieces scored so it shows up on the screen
                 upperInput1.setText(autonUpperPiecesString);
             }
         });
@@ -317,6 +324,7 @@ public class AutonScreen extends AppCompatActivity {
                     autonUpperPiecesScored = Integer.parseInt(upperInput1.getText().toString());
                 }
                 if(autonUpperPiecesScored > 0) {
+                    //if the number is above 0 the number can go one lower but otherwise nothing will happen if it is already at 0 since you don't want negative numbers
                     autonUpperPiecesScored--;
                 }
                 String autonUpperPiecesString = "" + autonUpperPiecesScored;

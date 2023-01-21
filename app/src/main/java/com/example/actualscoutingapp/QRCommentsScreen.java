@@ -14,6 +14,8 @@ import android.widget.TextView;
 
 public class QRCommentsScreen extends AppCompatActivity {
 
+// MORE IN DEPTH COMMENTS FOR REPEATED CODE IS ON AUTON SCREEN
+
     //creating variables for everything on the .xml file
     ImageButton autonBtn4, teleopBtn4, endgameBtn4, qrcodeBtn4;
     TextView autonTitleTxt4, teleopTitleTxt4, endgameTitleTxt4, qrcodeTitleTxt4, qrcodeTitleTxt, qrCommentsTitle;
@@ -60,8 +62,10 @@ public class QRCommentsScreen extends AppCompatActivity {
 
         commentsBox = findViewById(R.id.comments);
 
+        //getting shared preferences
         sp = getSharedPreferences("TeamData", MODE_PRIVATE);
 
+        //when the screen is changed to the auton screen if there was any text or checks already inputed then they will replace the otherwise blank inputs
         SharedPreferences new_sp = getApplicationContext().getSharedPreferences("TeamData", MODE_PRIVATE);
         commentsBox.setText(new_sp.getString("Comments",""));
 
@@ -72,13 +76,13 @@ public class QRCommentsScreen extends AppCompatActivity {
         qrcodeHomeBtnPic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //when the screen is changed all inputs will be saved with shared preferences
                 commentInputString = commentsBox.getText().toString();
-
                 SharedPreferences.Editor editor = sp.edit();
                 editor.putString("Comments", commentInputString);
                 editor.commit();
 
+                //screen will be changed to the home screen
                 Intent goToHomeScreen = new Intent(QRCommentsScreen.this, MainActivity.class);
                 startActivity(goToHomeScreen);
             }
@@ -86,13 +90,13 @@ public class QRCommentsScreen extends AppCompatActivity {
         autonBtn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //when the screen is changed all inputs will be saved with shared preferences
                 commentInputString = commentsBox.getText().toString();
-
                 SharedPreferences.Editor editor = sp.edit();
                 editor.putString("Comments", commentInputString);
                 editor.commit();
 
+                //screen will be changed to the auton screen
                 Intent goToAutonScreen = new Intent(QRCommentsScreen.this, AutonScreen.class);
                 startActivity(goToAutonScreen);
             }
@@ -100,27 +104,27 @@ public class QRCommentsScreen extends AppCompatActivity {
         teleopBtn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //when the screen is changed all inputs will be saved with shared preferences
                 commentInputString = commentsBox.getText().toString();
-
                 SharedPreferences.Editor editor = sp.edit();
                 editor.putString("Comments", commentInputString);
                 editor.commit();
 
-                Intent goToTeleopScreen = new Intent(QRCommentsScreen.this, EndScreen.class);
+                //screen will be changed to the teleop screen
+                Intent goToTeleopScreen = new Intent(QRCommentsScreen.this, TeleopScreen.class);
                 startActivity(goToTeleopScreen);
             }
         });
         endgameBtn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //when the screen is changed all inputs will be saved with shared preferences
                 commentInputString = commentsBox.getText().toString();
-
                 SharedPreferences.Editor editor = sp.edit();
                 editor.putString("Comments", commentInputString);
                 editor.commit();
 
+                //screen will be changed to the endgame screen
                 Intent goToEndgameScreen = new Intent(QRCommentsScreen.this, EndScreen.class);
                 startActivity(goToEndgameScreen);
             }

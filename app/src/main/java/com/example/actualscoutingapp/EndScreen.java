@@ -16,6 +16,8 @@ import android.widget.TextView;
 
 public class EndScreen extends AppCompatActivity {
 
+// MORE IN DEPTH COMMENTS FOR REPEATED CODE IS ON AUTON SCREEN
+
     //creating variables for everything on the .xml file
     ImageButton autonBtn3, teleopBtn3, endgameBtn3, qrcodeBtn3;
     TextView autonTitleTxt3, teleopTitleTxt3, endgameTitleTxt3, qrcodeTitleTxt3, endgameTitleTxt, matchNumTitle3, teamNumTitle3, endgameMatchInfoBack, scoringTitleTxt3, upperTitleTxt3, middleTitleTxt3, lowerTitleTxt3, loadsTitleTxt3, dockingTitleTxt3;
@@ -88,8 +90,10 @@ public class EndScreen extends AppCompatActivity {
         engagedOption3 = findViewById(R.id.dj);
 
 
+        //getting shared preferences
         sp = getSharedPreferences("TeamData", MODE_PRIVATE);
 
+        //when the screen is changed to the auton screen if there was any text or checks already inputed then they will replace the otherwise blank inputs
         SharedPreferences new_sp = getApplicationContext().getSharedPreferences("TeamData", MODE_PRIVATE);
         teamNumInput3.setText(new_sp.getString("TeamNumber", ""));
         matchNumInput3.setText(new_sp.getString("MatchNumber", ""));
@@ -107,13 +111,12 @@ public class EndScreen extends AppCompatActivity {
         endgameHomeBtnPic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //when the screen is changed all inputs will be saved with shared preferences
                 teamNumberInputString = teamNumInput3.getText().toString();
                 matchNumberInputString = matchNumInput3.getText().toString();
                 endgameUpperInputScoreString = upperInput3.getText().toString();
                 endgameMiddleInputScoreString = middleInput3.getText().toString();
                 endgameLowerInputScoreString = lowerInput3.getText().toString();
-
                 if (groundCheck3.isChecked()) {
                     endgameGroundLoadsBoolean = true;
                 }
@@ -126,9 +129,7 @@ public class EndScreen extends AppCompatActivity {
                 else {
                     endgameHumanLoadsBoolean = false;
                 }
-
                 SharedPreferences.Editor editor = sp.edit();
-
                 editor.putString("TeamNumber", teamNumberInputString);
                 editor.putString("MatchNumber", matchNumberInputString);
                 editor.putString("EndgameUpperScore", endgameUpperInputScoreString);
@@ -138,6 +139,7 @@ public class EndScreen extends AppCompatActivity {
                 editor.putBoolean("EndgameHumanCheck", endgameHumanLoadsBoolean);
                 editor.commit();
 
+                //screen will be changed to the home screen
                 Intent goToHomeScreen = new Intent(EndScreen.this, MainActivity.class);
                 startActivity(goToHomeScreen);
             }
@@ -145,13 +147,12 @@ public class EndScreen extends AppCompatActivity {
         autonBtn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //when the screen is changed all inputs will be saved with shared preferences
                 teamNumberInputString = teamNumInput3.getText().toString();
                 matchNumberInputString = matchNumInput3.getText().toString();
                 endgameUpperInputScoreString = upperInput3.getText().toString();
                 endgameMiddleInputScoreString = middleInput3.getText().toString();
                 endgameLowerInputScoreString = lowerInput3.getText().toString();
-
                 if (groundCheck3.isChecked()) {
                     endgameGroundLoadsBoolean = true;
                 }
@@ -164,9 +165,7 @@ public class EndScreen extends AppCompatActivity {
                 else {
                     endgameHumanLoadsBoolean = false;
                 }
-
                 SharedPreferences.Editor editor = sp.edit();
-
                 editor.putString("TeamNumber", teamNumberInputString);
                 editor.putString("MatchNumber", matchNumberInputString);
                 editor.putString("EndgameUpperScore", endgameUpperInputScoreString);
@@ -176,6 +175,7 @@ public class EndScreen extends AppCompatActivity {
                 editor.putBoolean("EndgameHumanCheck", endgameHumanLoadsBoolean);
                 editor.commit();
 
+                //screen will be changed to auton screen
                 Intent goToAutonScreen = new Intent(EndScreen.this, AutonScreen.class);
                 startActivity(goToAutonScreen);
             }
@@ -183,13 +183,12 @@ public class EndScreen extends AppCompatActivity {
         teleopBtn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //when the screen is changed all inputs will be saved with shared preferences
                 teamNumberInputString = teamNumInput3.getText().toString();
                 matchNumberInputString = matchNumInput3.getText().toString();
                 endgameUpperInputScoreString = upperInput3.getText().toString();
                 endgameMiddleInputScoreString = middleInput3.getText().toString();
                 endgameLowerInputScoreString = lowerInput3.getText().toString();
-
                 if (groundCheck3.isChecked()) {
                     endgameGroundLoadsBoolean = true;
                 }
@@ -202,9 +201,7 @@ public class EndScreen extends AppCompatActivity {
                 else {
                     endgameHumanLoadsBoolean = false;
                 }
-
                 SharedPreferences.Editor editor = sp.edit();
-
                 editor.putString("TeamNumber", teamNumberInputString);
                 editor.putString("MatchNumber", matchNumberInputString);
                 editor.putString("EndgameUpperScore", endgameUpperInputScoreString);
@@ -214,6 +211,7 @@ public class EndScreen extends AppCompatActivity {
                 editor.putBoolean("EndgameHumanCheck", endgameHumanLoadsBoolean);
                 editor.commit();
 
+                //screen will be changed to teleop screen
                 Intent goToTeleopScreen = new Intent(EndScreen.this, TeleopScreen.class);
                 startActivity(goToTeleopScreen);
             }
@@ -221,13 +219,12 @@ public class EndScreen extends AppCompatActivity {
         qrcodeBtn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //when the screen is changed all inputs will be saved with shared preferences
                 teamNumberInputString = teamNumInput3.getText().toString();
                 matchNumberInputString = matchNumInput3.getText().toString();
                 endgameUpperInputScoreString = upperInput3.getText().toString();
                 endgameMiddleInputScoreString = middleInput3.getText().toString();
                 endgameLowerInputScoreString = lowerInput3.getText().toString();
-
                 if (groundCheck3.isChecked()) {
                     endgameGroundLoadsBoolean = true;
                 }
@@ -240,9 +237,7 @@ public class EndScreen extends AppCompatActivity {
                 else {
                     endgameHumanLoadsBoolean = false;
                 }
-
                 SharedPreferences.Editor editor = sp.edit();
-
                 editor.putString("TeamNumber", teamNumberInputString);
                 editor.putString("MatchNumber", matchNumberInputString);
                 editor.putString("EndgameUpperScore", endgameUpperInputScoreString);
@@ -252,6 +247,7 @@ public class EndScreen extends AppCompatActivity {
                 editor.putBoolean("EndgameHumanCheck", endgameHumanLoadsBoolean);
                 editor.commit();
 
+                //screen will be changed to qrcode screen
                 Intent goToQrcodeScreen = new Intent(EndScreen.this, QRCommentsScreen.class);
                 startActivity(goToQrcodeScreen);
             }
