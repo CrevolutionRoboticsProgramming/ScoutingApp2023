@@ -25,7 +25,8 @@ public class AutonScreen extends AppCompatActivity {
     RadioGroup docking1;
     RadioButton noAttemptOption1, attemptNoEngageOption1, engagedOption1;
     SharedPreferences sp;
-    String teamNumberInputString;
+    String teamNumberInputString, matchNumberInputString, autonUpperInputScoreString, autonMiddleInputScoreString, autonLowerInputScoreString;
+    Boolean autonGroundLoadsBoolean, autonHumanLoadsBoolean, autonMobilityPointBoolean;
 
 
 
@@ -93,6 +94,13 @@ public class AutonScreen extends AppCompatActivity {
 
         SharedPreferences new_sp = getApplicationContext().getSharedPreferences("TeamData", MODE_PRIVATE);
         teamNumInput1.setText(new_sp.getString("TeamNumber", ""));
+        matchNumInput1.setText(new_sp.getString("MatchNumber", ""));
+        upperInput1.setText(new_sp.getString("AutonUpperScore", ""));
+        middleInput1.setText(new_sp.getString("AutonMiddleScore", ""));
+        lowerInput1.setText(new_sp.getString("AutonLowerScore", ""));
+        groundCheck1.setChecked(new_sp.getBoolean("AutonGroundCheck", false));
+        humanCheck1.setChecked(new_sp.getBoolean("AutonHumanCheck", false));
+        mobilityPointCheck.setChecked(new_sp.getBoolean("AutonMobilityCheck", false));
 
 
 
@@ -102,6 +110,42 @@ public class AutonScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                teamNumberInputString = teamNumInput1.getText().toString();
+                matchNumberInputString = matchNumInput1.getText().toString();
+                autonUpperInputScoreString = upperInput1.getText().toString();
+                autonMiddleInputScoreString = middleInput1.getText().toString();
+                autonLowerInputScoreString = lowerInput1.getText().toString();
+
+                if (groundCheck1.isChecked()) {
+                    autonGroundLoadsBoolean = true;
+                }
+                else {
+                    autonGroundLoadsBoolean = false;
+                }
+                if (humanCheck1.isChecked()) {
+                    autonHumanLoadsBoolean  = true;
+                }
+                else {
+                    autonHumanLoadsBoolean = false;
+                }
+                if (mobilityPointCheck.isChecked()) {
+                    autonMobilityPointBoolean  = true;
+                }
+                else {
+                    autonMobilityPointBoolean = false;
+                }
+
+                SharedPreferences.Editor editor = sp.edit();
+
+                editor.putString("TeamNumber", teamNumberInputString);
+                editor.putString("MatchNumber", matchNumberInputString);
+                editor.putString("AutonUpperScore", autonUpperInputScoreString);
+                editor.putString("AutonMiddleScore", autonMiddleInputScoreString);
+                editor.putString("AutonLowerScore", autonLowerInputScoreString);
+                editor.putBoolean("AutonGroundCheck", autonGroundLoadsBoolean);
+                editor.putBoolean("AutonHumanCheck", autonHumanLoadsBoolean);
+                editor.putBoolean("AutonMobilityCheck", autonMobilityPointBoolean);
+                editor.commit();
 
                 Intent goToHomeScreen = new Intent(AutonScreen.this, MainActivity.class);
                 startActivity(goToHomeScreen);
@@ -112,9 +156,42 @@ public class AutonScreen extends AppCompatActivity {
             public void onClick(View view) {
 
                 teamNumberInputString = teamNumInput1.getText().toString();
+                matchNumberInputString = matchNumInput1.getText().toString();
+                autonUpperInputScoreString = upperInput1.getText().toString();
+                autonMiddleInputScoreString = middleInput1.getText().toString();
+                autonLowerInputScoreString = lowerInput1.getText().toString();
+
+                if (groundCheck1.isChecked()) {
+                    autonGroundLoadsBoolean = true;
+                }
+                else {
+                    autonGroundLoadsBoolean = false;
+                }
+                if (humanCheck1.isChecked()) {
+                    autonHumanLoadsBoolean  = true;
+                }
+                else {
+                    autonHumanLoadsBoolean = false;
+                }
+                if (mobilityPointCheck.isChecked()) {
+                    autonMobilityPointBoolean  = true;
+                }
+                else {
+                    autonMobilityPointBoolean = false;
+                }
+
                 SharedPreferences.Editor editor = sp.edit();
+
                 editor.putString("TeamNumber", teamNumberInputString);
+                editor.putString("MatchNumber", matchNumberInputString);
+                editor.putString("AutonUpperScore", autonUpperInputScoreString);
+                editor.putString("AutonMiddleScore", autonMiddleInputScoreString);
+                editor.putString("AutonLowerScore", autonLowerInputScoreString);
+                editor.putBoolean("AutonGroundCheck", autonGroundLoadsBoolean);
+                editor.putBoolean("AutonHumanCheck", autonHumanLoadsBoolean);
+                editor.putBoolean("AutonMobilityCheck", autonMobilityPointBoolean);
                 editor.commit();
+
 
                 Intent goToTeleopScreen = new Intent(AutonScreen.this, TeleopScreen.class);
                 startActivity(goToTeleopScreen);
@@ -123,6 +200,44 @@ public class AutonScreen extends AppCompatActivity {
         endgameBtn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                teamNumberInputString = teamNumInput1.getText().toString();
+                matchNumberInputString = matchNumInput1.getText().toString();
+                autonUpperInputScoreString = upperInput1.getText().toString();
+                autonMiddleInputScoreString = middleInput1.getText().toString();
+                autonLowerInputScoreString = lowerInput1.getText().toString();
+
+                if (groundCheck1.isChecked()) {
+                    autonGroundLoadsBoolean = true;
+                }
+                else {
+                    autonGroundLoadsBoolean = false;
+                }
+                if (humanCheck1.isChecked()) {
+                    autonHumanLoadsBoolean  = true;
+                }
+                else {
+                    autonHumanLoadsBoolean = false;
+                }
+                if (mobilityPointCheck.isChecked()) {
+                    autonMobilityPointBoolean  = true;
+                }
+                else {
+                    autonMobilityPointBoolean = false;
+                }
+
+                SharedPreferences.Editor editor = sp.edit();
+
+                editor.putString("TeamNumber", teamNumberInputString);
+                editor.putString("MatchNumber", matchNumberInputString);
+                editor.putString("AutonUpperScore", autonUpperInputScoreString);
+                editor.putString("AutonMiddleScore", autonMiddleInputScoreString);
+                editor.putString("AutonLowerScore", autonLowerInputScoreString);
+                editor.putBoolean("AutonGroundCheck", autonGroundLoadsBoolean);
+                editor.putBoolean("AutonHumanCheck", autonHumanLoadsBoolean);
+                editor.putBoolean("AutonMobilityCheck", autonMobilityPointBoolean);
+                editor.commit();
+
                 Intent goToEndgameScreen = new Intent(AutonScreen.this, EndScreen.class);
                 startActivity(goToEndgameScreen);
             }
@@ -130,6 +245,44 @@ public class AutonScreen extends AppCompatActivity {
         qrcodeBtn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                teamNumberInputString = teamNumInput1.getText().toString();
+                matchNumberInputString = matchNumInput1.getText().toString();
+                autonUpperInputScoreString = upperInput1.getText().toString();
+                autonMiddleInputScoreString = middleInput1.getText().toString();
+                autonLowerInputScoreString = lowerInput1.getText().toString();
+
+                if (groundCheck1.isChecked()) {
+                    autonGroundLoadsBoolean = true;
+                }
+                else {
+                    autonGroundLoadsBoolean = false;
+                }
+                if (humanCheck1.isChecked()) {
+                    autonHumanLoadsBoolean  = true;
+                }
+                else {
+                    autonHumanLoadsBoolean = false;
+                }
+                if (mobilityPointCheck.isChecked()) {
+                    autonMobilityPointBoolean  = true;
+                }
+                else {
+                    autonMobilityPointBoolean = false;
+                }
+
+                SharedPreferences.Editor editor = sp.edit();
+
+                editor.putString("TeamNumber", teamNumberInputString);
+                editor.putString("MatchNumber", matchNumberInputString);
+                editor.putString("AutonUpperScore", autonUpperInputScoreString);
+                editor.putString("AutonMiddleScore", autonMiddleInputScoreString);
+                editor.putString("AutonLowerScore", autonLowerInputScoreString);
+                editor.putBoolean("AutonGroundCheck", autonGroundLoadsBoolean);
+                editor.putBoolean("AutonHumanCheck", autonHumanLoadsBoolean);
+                editor.putBoolean("AutonMobilityCheck", autonMobilityPointBoolean);
+                editor.commit();
+
                 Intent goToQrcodeScreen = new Intent(AutonScreen.this, QRCommentsScreen.class);
                 startActivity(goToQrcodeScreen);
             }
