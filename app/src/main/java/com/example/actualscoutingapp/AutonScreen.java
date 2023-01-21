@@ -25,6 +25,8 @@ public class AutonScreen extends AppCompatActivity {
     RadioGroup docking1;
     RadioButton noAttemptOption1, attemptNoEngageOption1, engagedOption1;
     SharedPreferences sp;
+    String teamNumberInputString;
+
 
 
     @Override
@@ -89,14 +91,18 @@ public class AutonScreen extends AppCompatActivity {
 
         sp = getSharedPreferences("TeamData", MODE_PRIVATE);
 
-        SharedPreferences new_SP = getApplicationContext().getSharedPreferences("TeamData", MODE_PRIVATE);
+        SharedPreferences new_sp = getApplicationContext().getSharedPreferences("TeamData", MODE_PRIVATE);
+        teamNumInput1.setText(new_sp.getString("TeamNumber", ""));
 
-        //creating on click events
 
+
+                //creating on click events
         //screen changing buttons
         autonHomeBtnPic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
                 Intent goToHomeScreen = new Intent(AutonScreen.this, MainActivity.class);
                 startActivity(goToHomeScreen);
             }
@@ -104,6 +110,12 @@ public class AutonScreen extends AppCompatActivity {
         teleopBtn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                teamNumberInputString = teamNumInput1.getText().toString();
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putString("TeamNumber", teamNumberInputString);
+                editor.commit();
+
                 Intent goToTeleopScreen = new Intent(AutonScreen.this, TeleopScreen.class);
                 startActivity(goToTeleopScreen);
             }
