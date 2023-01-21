@@ -3,6 +3,7 @@ package com.example.actualscoutingapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
@@ -20,6 +21,9 @@ public class TeleopScreen extends AppCompatActivity {
     ImageView teleopScreenBackground, teleopHomeBtnPic, teleopTitleUnderline, matchNumBack2, teamNumBack2, upperPlus2, upperMinus2, middlePlus2, middleMinus2, lowerPlus2, lowerMinus2;
     EditText matchNumInput2, teamNumInput2, upperInput2, middleInput2, lowerInput2;
     CheckBox groundCheck2, humanCheck2;
+    SharedPreferences sp;
+    String teamNumberInputString, matchNumberInputString, teleopUpperInputScoreString, teleopMiddleInputScoreString, teleopLowerInputScoreString;
+    Boolean teleopGroundLoadsBoolean, teleopHumanLoadsBoolean;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +79,16 @@ public class TeleopScreen extends AppCompatActivity {
         groundCheck2 = findViewById(R.id.teleopGroundCheck);
         humanCheck2 = findViewById(R.id.teleopHumanCheck);
 
+        sp = getSharedPreferences("TeamData", MODE_PRIVATE);
+
+        SharedPreferences new_sp = getApplicationContext().getSharedPreferences("TeamData", MODE_PRIVATE);
+        teamNumInput2.setText(new_sp.getString("TeamNumber", ""));
+        matchNumInput2.setText(new_sp.getString("MatchNumber", ""));
+        upperInput2.setText(new_sp.getString("TeleopUpperScore", ""));
+        middleInput2.setText(new_sp.getString("TeleopMiddleScore", ""));
+        lowerInput2.setText(new_sp.getString("TeleopLowerScore", ""));
+        groundCheck2.setChecked(new_sp.getBoolean("TeleopGroundCheck", false));
+        humanCheck2.setChecked(new_sp.getBoolean("TeleopHumanCheck", false));
 
         ///creating on click events
 
@@ -82,6 +96,37 @@ public class TeleopScreen extends AppCompatActivity {
         teleopHomeBtnPic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                teamNumberInputString = teamNumInput2.getText().toString();
+                matchNumberInputString = matchNumInput2.getText().toString();
+                teleopUpperInputScoreString = upperInput2.getText().toString();
+                teleopMiddleInputScoreString = middleInput2.getText().toString();
+                teleopLowerInputScoreString = lowerInput2.getText().toString();
+
+                if (groundCheck2.isChecked()) {
+                    teleopGroundLoadsBoolean = true;
+                }
+                else {
+                    teleopGroundLoadsBoolean = false;
+                }
+                if (humanCheck2.isChecked()) {
+                    teleopHumanLoadsBoolean  = true;
+                }
+                else {
+                    teleopHumanLoadsBoolean = false;
+                }
+
+                SharedPreferences.Editor editor = sp.edit();
+
+                editor.putString("TeamNumber", teamNumberInputString);
+                editor.putString("MatchNumber", matchNumberInputString);
+                editor.putString("TeleopUpperScore", teleopUpperInputScoreString);
+                editor.putString("TeleopMiddleScore", teleopMiddleInputScoreString);
+                editor.putString("TeleopLowerScore", teleopLowerInputScoreString);
+                editor.putBoolean("TeleopGroundCheck", teleopGroundLoadsBoolean);
+                editor.putBoolean("TeleopHumanCheck", teleopHumanLoadsBoolean);
+                editor.commit();
+
                 Intent goToHomeScreen = new Intent(TeleopScreen.this, MainActivity.class);
                 startActivity(goToHomeScreen);
             }
@@ -89,6 +134,37 @@ public class TeleopScreen extends AppCompatActivity {
         autonBtn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                teamNumberInputString = teamNumInput2.getText().toString();
+                matchNumberInputString = matchNumInput2.getText().toString();
+                teleopUpperInputScoreString = upperInput2.getText().toString();
+                teleopMiddleInputScoreString = middleInput2.getText().toString();
+                teleopLowerInputScoreString = lowerInput2.getText().toString();
+
+                if (groundCheck2.isChecked()) {
+                    teleopGroundLoadsBoolean = true;
+                }
+                else {
+                    teleopGroundLoadsBoolean = false;
+                }
+                if (humanCheck2.isChecked()) {
+                    teleopHumanLoadsBoolean  = true;
+                }
+                else {
+                    teleopHumanLoadsBoolean = false;
+                }
+
+                SharedPreferences.Editor editor = sp.edit();
+
+                editor.putString("TeamNumber", teamNumberInputString);
+                editor.putString("MatchNumber", matchNumberInputString);
+                editor.putString("TeleopUpperScore", teleopUpperInputScoreString);
+                editor.putString("TeleopMiddleScore", teleopMiddleInputScoreString);
+                editor.putString("TeleopLowerScore", teleopLowerInputScoreString);
+                editor.putBoolean("TeleopGroundCheck", teleopGroundLoadsBoolean);
+                editor.putBoolean("TeleopHumanCheck", teleopHumanLoadsBoolean);
+                editor.commit();
+
                 Intent goToAutonScreen = new Intent(TeleopScreen.this, AutonScreen.class);
                 startActivity(goToAutonScreen);
             }
@@ -96,6 +172,37 @@ public class TeleopScreen extends AppCompatActivity {
         endgameBtn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                teamNumberInputString = teamNumInput2.getText().toString();
+                matchNumberInputString = matchNumInput2.getText().toString();
+                teleopUpperInputScoreString = upperInput2.getText().toString();
+                teleopMiddleInputScoreString = middleInput2.getText().toString();
+                teleopLowerInputScoreString = lowerInput2.getText().toString();
+
+                if (groundCheck2.isChecked()) {
+                    teleopGroundLoadsBoolean = true;
+                }
+                else {
+                    teleopGroundLoadsBoolean = false;
+                }
+                if (humanCheck2.isChecked()) {
+                    teleopHumanLoadsBoolean  = true;
+                }
+                else {
+                    teleopHumanLoadsBoolean = false;
+                }
+
+                SharedPreferences.Editor editor = sp.edit();
+
+                editor.putString("TeamNumber", teamNumberInputString);
+                editor.putString("MatchNumber", matchNumberInputString);
+                editor.putString("TeleopUpperScore", teleopUpperInputScoreString);
+                editor.putString("TeleopMiddleScore", teleopMiddleInputScoreString);
+                editor.putString("TeleopLowerScore", teleopLowerInputScoreString);
+                editor.putBoolean("TeleopGroundCheck", teleopGroundLoadsBoolean);
+                editor.putBoolean("TeleopHumanCheck", teleopHumanLoadsBoolean);
+                editor.commit();
+
                 Intent goToEndgameScreen = new Intent(TeleopScreen.this, EndScreen.class);
                 startActivity(goToEndgameScreen);
             }
@@ -103,6 +210,37 @@ public class TeleopScreen extends AppCompatActivity {
         qrcodeBtn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                teamNumberInputString = teamNumInput2.getText().toString();
+                matchNumberInputString = matchNumInput2.getText().toString();
+                teleopUpperInputScoreString = upperInput2.getText().toString();
+                teleopMiddleInputScoreString = middleInput2.getText().toString();
+                teleopLowerInputScoreString = lowerInput2.getText().toString();
+
+                if (groundCheck2.isChecked()) {
+                    teleopGroundLoadsBoolean = true;
+                }
+                else {
+                    teleopGroundLoadsBoolean = false;
+                }
+                if (humanCheck2.isChecked()) {
+                    teleopHumanLoadsBoolean  = true;
+                }
+                else {
+                    teleopHumanLoadsBoolean = false;
+                }
+
+                SharedPreferences.Editor editor = sp.edit();
+
+                editor.putString("TeamNumber", teamNumberInputString);
+                editor.putString("MatchNumber", matchNumberInputString);
+                editor.putString("TeleopUpperScore", teleopUpperInputScoreString);
+                editor.putString("TeleopMiddleScore", teleopMiddleInputScoreString);
+                editor.putString("TeleopLowerScore", teleopLowerInputScoreString);
+                editor.putBoolean("TeleopGroundCheck", teleopGroundLoadsBoolean);
+                editor.putBoolean("TeleopHumanCheck", teleopHumanLoadsBoolean);
+                editor.commit();
+
                 Intent goToQrcodeScreen = new Intent(TeleopScreen.this, QRCommentsScreen.class);
                 startActivity(goToQrcodeScreen);
             }
