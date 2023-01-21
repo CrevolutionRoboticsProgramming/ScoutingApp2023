@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/mainActivityBack"
+        android:layout_width="1029dp"
+        android:layout_height="603dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/scouting_background2" />
+
+    <ImageView
+        android:id="@+id/crevLogo"
+        android:layout_width="638dp"
+        android:layout_height="319dp"
+        android:layout_marginStart="193dp"
+        android:layout_marginTop="126dp"
+        android:layout_marginEnd="193dp"
+        android:layout_marginBottom="155dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/crevologo" />
+
+    <ImageView
+        android:id="@+id/startUnderline"
+        android:layout_width="631dp"
+        android:layout_height="264dp"
+        android:layout_marginStart="190dp"
+        android:layout_marginTop="425dp"
+        android:layout_marginEnd="196dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/white_line" />
+
+    <Button
+        android:id="@+id/start"
+        android:layout_width="283dp"
+        android:layout_height="83dp"
+        android:layout_marginStart="371dp"
+        android:layout_marginTop="464dp"
+        android:layout_marginEnd="370dp"
+        android:layout_marginBottom="53dp"
+        android:background="#00FFFFFF"
+        android:fontFamily="sans-serif-medium"
+        android:text="Start"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
