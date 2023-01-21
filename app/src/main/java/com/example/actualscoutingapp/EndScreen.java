@@ -3,6 +3,7 @@ package com.example.actualscoutingapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
@@ -23,6 +24,9 @@ public class EndScreen extends AppCompatActivity {
     CheckBox groundCheck3, humanCheck3;
     RadioGroup docking3;
     RadioButton noAttemptOption3, attemptNoEngageOption3, engagedOption3;
+    SharedPreferences sp;
+    String teamNumberInputString, matchNumberInputString, endgameUpperInputScoreString, endgameMiddleInputScoreString, endgameLowerInputScoreString;
+    Boolean endgameGroundLoadsBoolean, endgameHumanLoadsBoolean;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,12 +88,56 @@ public class EndScreen extends AppCompatActivity {
         engagedOption3 = findViewById(R.id.dj);
 
 
+        sp = getSharedPreferences("TeamData", MODE_PRIVATE);
+
+        SharedPreferences new_sp = getApplicationContext().getSharedPreferences("TeamData", MODE_PRIVATE);
+        teamNumInput3.setText(new_sp.getString("TeamNumber", ""));
+        matchNumInput3.setText(new_sp.getString("MatchNumber", ""));
+        upperInput3.setText(new_sp.getString("EndgameUpperScore", ""));
+        middleInput3.setText(new_sp.getString("EndgameMiddleScore", ""));
+        lowerInput3.setText(new_sp.getString("EndgameLowerScore", ""));
+        groundCheck3.setChecked(new_sp.getBoolean("EndgameGroundCheck", false));
+        humanCheck3.setChecked(new_sp.getBoolean("EndgameHumanCheck", false));
+
+
+
         //creating on click events
 
         //screen changing buttons
         endgameHomeBtnPic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                teamNumberInputString = teamNumInput3.getText().toString();
+                matchNumberInputString = matchNumInput3.getText().toString();
+                endgameUpperInputScoreString = upperInput3.getText().toString();
+                endgameMiddleInputScoreString = middleInput3.getText().toString();
+                endgameLowerInputScoreString = lowerInput3.getText().toString();
+
+                if (groundCheck3.isChecked()) {
+                    endgameGroundLoadsBoolean = true;
+                }
+                else {
+                    endgameGroundLoadsBoolean = false;
+                }
+                if (humanCheck3.isChecked()) {
+                    endgameHumanLoadsBoolean  = true;
+                }
+                else {
+                    endgameHumanLoadsBoolean = false;
+                }
+
+                SharedPreferences.Editor editor = sp.edit();
+
+                editor.putString("TeamNumber", teamNumberInputString);
+                editor.putString("MatchNumber", matchNumberInputString);
+                editor.putString("EndgameUpperScore", endgameUpperInputScoreString);
+                editor.putString("EndgameMiddleScore", endgameMiddleInputScoreString);
+                editor.putString("EndgameLowerScore", endgameLowerInputScoreString);
+                editor.putBoolean("EndgameGroundCheck", endgameGroundLoadsBoolean);
+                editor.putBoolean("EndgameHumanCheck", endgameHumanLoadsBoolean);
+                editor.commit();
+
                 Intent goToHomeScreen = new Intent(EndScreen.this, MainActivity.class);
                 startActivity(goToHomeScreen);
             }
@@ -97,6 +145,37 @@ public class EndScreen extends AppCompatActivity {
         autonBtn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                teamNumberInputString = teamNumInput3.getText().toString();
+                matchNumberInputString = matchNumInput3.getText().toString();
+                endgameUpperInputScoreString = upperInput3.getText().toString();
+                endgameMiddleInputScoreString = middleInput3.getText().toString();
+                endgameLowerInputScoreString = lowerInput3.getText().toString();
+
+                if (groundCheck3.isChecked()) {
+                    endgameGroundLoadsBoolean = true;
+                }
+                else {
+                    endgameGroundLoadsBoolean = false;
+                }
+                if (humanCheck3.isChecked()) {
+                    endgameHumanLoadsBoolean  = true;
+                }
+                else {
+                    endgameHumanLoadsBoolean = false;
+                }
+
+                SharedPreferences.Editor editor = sp.edit();
+
+                editor.putString("TeamNumber", teamNumberInputString);
+                editor.putString("MatchNumber", matchNumberInputString);
+                editor.putString("EndgameUpperScore", endgameUpperInputScoreString);
+                editor.putString("EndgameMiddleScore", endgameMiddleInputScoreString);
+                editor.putString("EndgameLowerScore", endgameLowerInputScoreString);
+                editor.putBoolean("EndgameGroundCheck", endgameGroundLoadsBoolean);
+                editor.putBoolean("EndgameHumanCheck", endgameHumanLoadsBoolean);
+                editor.commit();
+
                 Intent goToAutonScreen = new Intent(EndScreen.this, AutonScreen.class);
                 startActivity(goToAutonScreen);
             }
@@ -104,6 +183,37 @@ public class EndScreen extends AppCompatActivity {
         teleopBtn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                teamNumberInputString = teamNumInput3.getText().toString();
+                matchNumberInputString = matchNumInput3.getText().toString();
+                endgameUpperInputScoreString = upperInput3.getText().toString();
+                endgameMiddleInputScoreString = middleInput3.getText().toString();
+                endgameLowerInputScoreString = lowerInput3.getText().toString();
+
+                if (groundCheck3.isChecked()) {
+                    endgameGroundLoadsBoolean = true;
+                }
+                else {
+                    endgameGroundLoadsBoolean = false;
+                }
+                if (humanCheck3.isChecked()) {
+                    endgameHumanLoadsBoolean  = true;
+                }
+                else {
+                    endgameHumanLoadsBoolean = false;
+                }
+
+                SharedPreferences.Editor editor = sp.edit();
+
+                editor.putString("TeamNumber", teamNumberInputString);
+                editor.putString("MatchNumber", matchNumberInputString);
+                editor.putString("EndgameUpperScore", endgameUpperInputScoreString);
+                editor.putString("EndgameMiddleScore", endgameMiddleInputScoreString);
+                editor.putString("EndgameLowerScore", endgameLowerInputScoreString);
+                editor.putBoolean("EndgameGroundCheck", endgameGroundLoadsBoolean);
+                editor.putBoolean("EndgameHumanCheck", endgameHumanLoadsBoolean);
+                editor.commit();
+
                 Intent goToTeleopScreen = new Intent(EndScreen.this, TeleopScreen.class);
                 startActivity(goToTeleopScreen);
             }
@@ -111,6 +221,37 @@ public class EndScreen extends AppCompatActivity {
         qrcodeBtn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                teamNumberInputString = teamNumInput3.getText().toString();
+                matchNumberInputString = matchNumInput3.getText().toString();
+                endgameUpperInputScoreString = upperInput3.getText().toString();
+                endgameMiddleInputScoreString = middleInput3.getText().toString();
+                endgameLowerInputScoreString = lowerInput3.getText().toString();
+
+                if (groundCheck3.isChecked()) {
+                    endgameGroundLoadsBoolean = true;
+                }
+                else {
+                    endgameGroundLoadsBoolean = false;
+                }
+                if (humanCheck3.isChecked()) {
+                    endgameHumanLoadsBoolean  = true;
+                }
+                else {
+                    endgameHumanLoadsBoolean = false;
+                }
+
+                SharedPreferences.Editor editor = sp.edit();
+
+                editor.putString("TeamNumber", teamNumberInputString);
+                editor.putString("MatchNumber", matchNumberInputString);
+                editor.putString("EndgameUpperScore", endgameUpperInputScoreString);
+                editor.putString("EndgameMiddleScore", endgameMiddleInputScoreString);
+                editor.putString("EndgameLowerScore", endgameLowerInputScoreString);
+                editor.putBoolean("EndgameGroundCheck", endgameGroundLoadsBoolean);
+                editor.putBoolean("EndgameHumanCheck", endgameHumanLoadsBoolean);
+                editor.commit();
+
                 Intent goToQrcodeScreen = new Intent(EndScreen.this, QRCommentsScreen.class);
                 startActivity(goToQrcodeScreen);
             }
