@@ -3,6 +3,7 @@ package com.example.actualscoutingapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +20,8 @@ public class QRCommentsScreen extends AppCompatActivity {
     ImageView qrcodeScreenBackground, qrcodeHomeBtnPic, qrcodePic, qrcodeTitleUnderline, qrcodeGenerateBack, matchNextBack, qrCommentsTitleUnderline;
     Button generateQrcodeBtn, nextMatchBtn;
     EditText commentsBox;
+    SharedPreferences sp;
+    String commentInputString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +60,11 @@ public class QRCommentsScreen extends AppCompatActivity {
 
         commentsBox = findViewById(R.id.comments);
 
+        sp = getSharedPreferences("TeamData", MODE_PRIVATE);
+
+        SharedPreferences new_sp = getApplicationContext().getSharedPreferences("TeamData", MODE_PRIVATE);
+        commentsBox.setText(new_sp.getString("Comments",""));
+
 
         //creating on click events
 
@@ -64,6 +72,13 @@ public class QRCommentsScreen extends AppCompatActivity {
         qrcodeHomeBtnPic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                commentInputString = commentsBox.getText().toString();
+
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putString("Comments", commentInputString);
+                editor.commit();
+
                 Intent goToHomeScreen = new Intent(QRCommentsScreen.this, MainActivity.class);
                 startActivity(goToHomeScreen);
             }
@@ -71,6 +86,13 @@ public class QRCommentsScreen extends AppCompatActivity {
         autonBtn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                commentInputString = commentsBox.getText().toString();
+
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putString("Comments", commentInputString);
+                editor.commit();
+
                 Intent goToAutonScreen = new Intent(QRCommentsScreen.this, AutonScreen.class);
                 startActivity(goToAutonScreen);
             }
@@ -78,6 +100,13 @@ public class QRCommentsScreen extends AppCompatActivity {
         teleopBtn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                commentInputString = commentsBox.getText().toString();
+
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putString("Comments", commentInputString);
+                editor.commit();
+
                 Intent goToTeleopScreen = new Intent(QRCommentsScreen.this, EndScreen.class);
                 startActivity(goToTeleopScreen);
             }
@@ -85,6 +114,13 @@ public class QRCommentsScreen extends AppCompatActivity {
         endgameBtn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                commentInputString = commentsBox.getText().toString();
+
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putString("Comments", commentInputString);
+                editor.commit();
+
                 Intent goToEndgameScreen = new Intent(QRCommentsScreen.this, EndScreen.class);
                 startActivity(goToEndgameScreen);
             }
