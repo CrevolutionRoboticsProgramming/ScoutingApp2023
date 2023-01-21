@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class TeleopScreen extends AppCompatActivity {
-
+    //test push to github
     //creating variables for everything on the .xml file
     ImageButton autonBtn2, teleopBtn2, endgameBtn2, qrcodeBtn2;
     TextView autonTitleTxt2, teleopTitleTxt2, endgameTitleTxt2, qrcodeTitleTxt2, teleopTitleTxt, matchNumTitle2, teamNumTitle2, teleopMatchInfoBack, scoringTitleTxt2, upperTitleTxt2, middleTitleTxt2, lowerTitleTxt2, loadsTitleTxt2;
