@@ -105,9 +105,9 @@ public class AutonScreen extends AppCompatActivity {
         groundCheck1.setChecked(new_sp.getBoolean("AutonGroundCheck", false));
         humanCheck1.setChecked(new_sp.getBoolean("AutonHumanCheck", false));
         mobilityPointCheck.setChecked(new_sp.getBoolean("AutonMobilityCheck", false));
-        noAttemptOption1.setChecked(new_sp.getBoolean("NoClimbAttempted", false));
-        attemptNoEngageOption1.setChecked(new_sp.getBoolean("ClimbAttemptedNotEngaged", false));
-        engagedOption1.setChecked(new_sp.getBoolean("ClimbAttemptedEngaged", false));
+        noAttemptOption1.setChecked(new_sp.getBoolean("AutonNoClimbAttempted", false));
+        attemptNoEngageOption1.setChecked(new_sp.getBoolean("AutonClimbAttemptedNotEngaged", false));
+        engagedOption1.setChecked(new_sp.getBoolean("AutonClimbAttemptedEngaged", false));
 
 
 
@@ -175,9 +175,9 @@ public class AutonScreen extends AppCompatActivity {
                 editor.putBoolean("AutonGroundCheck", autonGroundLoadsBoolean);
                 editor.putBoolean("AutonHumanCheck", autonHumanLoadsBoolean);
                 editor.putBoolean("AutonMobilityCheck", autonMobilityPointBoolean);
-                editor.putBoolean("NoClimbAttempted", autonNoDockingBoolean);
-                editor.putBoolean("ClimbAttemptedNotEngaged", autonDockingNotEngagedBoolean);
-                editor.putBoolean("ClimbAttemptedEngaged", autonDockingEngagedBoolean);
+                editor.putBoolean("AutonNoClimbAttempted", autonNoDockingBoolean);
+                editor.putBoolean("AutonClimbAttemptedNotEngaged", autonDockingNotEngagedBoolean);
+                editor.putBoolean("AutonClimbAttemptedEngaged", autonDockingEngagedBoolean);
                 //updates all the sp
                 editor.commit();
 
@@ -241,9 +241,9 @@ public class AutonScreen extends AppCompatActivity {
                 editor.putBoolean("AutonGroundCheck", autonGroundLoadsBoolean);
                 editor.putBoolean("AutonHumanCheck", autonHumanLoadsBoolean);
                 editor.putBoolean("AutonMobilityCheck", autonMobilityPointBoolean);
-                editor.putBoolean("NoClimbAttempted", autonNoDockingBoolean);
-                editor.putBoolean("ClimbAttemptedNotEngaged", autonDockingNotEngagedBoolean);
-                editor.putBoolean("ClimbAttemptedEngaged", autonDockingEngagedBoolean);
+                editor.putBoolean("AutonNoClimbAttempted", autonNoDockingBoolean);
+                editor.putBoolean("AutonClimbAttemptedNotEngaged", autonDockingNotEngagedBoolean);
+                editor.putBoolean("AutonClimbAttemptedEngaged", autonDockingEngagedBoolean);
                 editor.commit();
 
                 //screen will be changed to the teloep screen
@@ -306,9 +306,9 @@ public class AutonScreen extends AppCompatActivity {
                 editor.putBoolean("AutonGroundCheck", autonGroundLoadsBoolean);
                 editor.putBoolean("AutonHumanCheck", autonHumanLoadsBoolean);
                 editor.putBoolean("AutonMobilityCheck", autonMobilityPointBoolean);
-                editor.putBoolean("NoClimbAttempted", autonNoDockingBoolean);
-                editor.putBoolean("ClimbAttemptedNotEngaged", autonDockingNotEngagedBoolean);
-                editor.putBoolean("ClimbAttemptedEngaged", autonDockingEngagedBoolean);
+                editor.putBoolean("AutonNoClimbAttempted", autonNoDockingBoolean);
+                editor.putBoolean("AutonClimbAttemptedNotEngaged", autonDockingNotEngagedBoolean);
+                editor.putBoolean("AutonClimbAttemptedEngaged", autonDockingEngagedBoolean);
                 editor.commit();
 
                 //screen will be changed to endgame screen
@@ -371,9 +371,9 @@ public class AutonScreen extends AppCompatActivity {
                 editor.putBoolean("AutonGroundCheck", autonGroundLoadsBoolean);
                 editor.putBoolean("AutonHumanCheck", autonHumanLoadsBoolean);
                 editor.putBoolean("AutonMobilityCheck", autonMobilityPointBoolean);
-                editor.putBoolean("NoClimbAttempted", autonNoDockingBoolean);
-                editor.putBoolean("ClimbAttemptedNotEngaged", autonDockingNotEngagedBoolean);
-                editor.putBoolean("ClimbAttemptedEngaged", autonDockingEngagedBoolean);
+                editor.putBoolean("AutonNoClimbAttempted", autonNoDockingBoolean);
+                editor.putBoolean("AutonClimbAttemptedNotEngaged", autonDockingNotEngagedBoolean);
+                editor.putBoolean("AutonClimbAttemptedEngaged", autonDockingEngagedBoolean);
                 editor.commit();
 
                 //screen will be changed to the qrcomment screen

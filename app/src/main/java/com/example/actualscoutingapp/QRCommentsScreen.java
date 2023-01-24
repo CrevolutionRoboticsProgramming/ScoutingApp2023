@@ -153,6 +153,12 @@ public class QRCommentsScreen extends AppCompatActivity {
                 editor.putBoolean("EndgameGroundCheck", false);
                 editor.putBoolean("EndgameHumanCheck", false);
                 editor.putString("Comments", "");
+                editor.putBoolean("AutonNoClimbAttempted", false);
+                editor.putBoolean("AutonClimbAttemptedNotEngaged", false);
+                editor.putBoolean("AutonClimbAttemptedEngaged", false);
+                editor.putBoolean("EndgameNoClimbAttempted", false);
+                editor.putBoolean("EndgameClimbAttemptedNotEngaged", false);
+                editor.putBoolean("EndgameClimbAttemptedEngaged", false);
                 editor.commit();
 
 

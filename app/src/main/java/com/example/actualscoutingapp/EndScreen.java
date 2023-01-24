@@ -28,7 +28,7 @@ public class EndScreen extends AppCompatActivity {
     RadioButton noAttemptOption3, attemptNoEngageOption3, engagedOption3;
     SharedPreferences sp;
     String teamNumberInputString, matchNumberInputString, endgameUpperInputScoreString, endgameMiddleInputScoreString, endgameLowerInputScoreString;
-    Boolean endgameGroundLoadsBoolean, endgameHumanLoadsBoolean;
+    Boolean endgameGroundLoadsBoolean, endgameHumanLoadsBoolean, endgameNoDockingBoolean, endgameDockingNotEngagedBoolean, endgameDockingEngagedBoolean;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,6 +102,9 @@ public class EndScreen extends AppCompatActivity {
         lowerInput3.setText(new_sp.getString("EndgameLowerScore", ""));
         groundCheck3.setChecked(new_sp.getBoolean("EndgameGroundCheck", false));
         humanCheck3.setChecked(new_sp.getBoolean("EndgameHumanCheck", false));
+        noAttemptOption3.setChecked(new_sp.getBoolean("EndgameNoClimbAttempted", false));
+        attemptNoEngageOption3.setChecked(new_sp.getBoolean("EndgameClimbAttemptedNotEngaged", false));
+        engagedOption3.setChecked(new_sp.getBoolean("EndgameClimbAttemptedEngaged", false));
 
 
 
@@ -129,6 +132,25 @@ public class EndScreen extends AppCompatActivity {
                 else {
                     endgameHumanLoadsBoolean = false;
                 }
+
+                if (noAttemptOption3.isChecked()){
+                    endgameNoDockingBoolean = true;
+                }
+                else {
+                    endgameNoDockingBoolean = false;
+                }
+                if (attemptNoEngageOption3.isChecked()){
+                    endgameDockingNotEngagedBoolean = true;
+                }
+                else {
+                    endgameDockingNotEngagedBoolean = false;
+                }
+                if (engagedOption3.isChecked()){
+                    endgameDockingEngagedBoolean = true;
+                }
+                else {
+                    endgameDockingEngagedBoolean = false;
+                }
                 SharedPreferences.Editor editor = sp.edit();
                 editor.putString("TeamNumber", teamNumberInputString);
                 editor.putString("MatchNumber", matchNumberInputString);
@@ -137,6 +159,9 @@ public class EndScreen extends AppCompatActivity {
                 editor.putString("EndgameLowerScore", endgameLowerInputScoreString);
                 editor.putBoolean("EndgameGroundCheck", endgameGroundLoadsBoolean);
                 editor.putBoolean("EndgameHumanCheck", endgameHumanLoadsBoolean);
+                editor.putBoolean("EndgameNoClimbAttempted", endgameNoDockingBoolean);
+                editor.putBoolean("EndgameClimbAttemptedNotEngaged", endgameDockingNotEngagedBoolean);
+                editor.putBoolean("EndgameClimbAttemptedEngaged", endgameDockingEngagedBoolean);
                 editor.commit();
 
                 //screen will be changed to the home screen
@@ -165,6 +190,25 @@ public class EndScreen extends AppCompatActivity {
                 else {
                     endgameHumanLoadsBoolean = false;
                 }
+
+                if (noAttemptOption3.isChecked()){
+                    endgameNoDockingBoolean = true;
+                }
+                else {
+                    endgameNoDockingBoolean = false;
+                }
+                if (attemptNoEngageOption3.isChecked()){
+                    endgameDockingNotEngagedBoolean = true;
+                }
+                else {
+                    endgameDockingNotEngagedBoolean = false;
+                }
+                if (engagedOption3.isChecked()){
+                    endgameDockingEngagedBoolean = true;
+                }
+                else {
+                    endgameDockingEngagedBoolean = false;
+                }
                 SharedPreferences.Editor editor = sp.edit();
                 editor.putString("TeamNumber", teamNumberInputString);
                 editor.putString("MatchNumber", matchNumberInputString);
@@ -173,6 +217,9 @@ public class EndScreen extends AppCompatActivity {
                 editor.putString("EndgameLowerScore", endgameLowerInputScoreString);
                 editor.putBoolean("EndgameGroundCheck", endgameGroundLoadsBoolean);
                 editor.putBoolean("EndgameHumanCheck", endgameHumanLoadsBoolean);
+                editor.putBoolean("EndgameNoClimbAttempted", endgameNoDockingBoolean);
+                editor.putBoolean("EndgameClimbAttemptedNotEngaged", endgameDockingNotEngagedBoolean);
+                editor.putBoolean("EndgameClimbAttemptedEngaged", endgameDockingEngagedBoolean);
                 editor.commit();
 
                 //screen will be changed to auton screen
@@ -201,6 +248,25 @@ public class EndScreen extends AppCompatActivity {
                 else {
                     endgameHumanLoadsBoolean = false;
                 }
+
+                if (noAttemptOption3.isChecked()){
+                    endgameNoDockingBoolean = true;
+                }
+                else {
+                    endgameNoDockingBoolean = false;
+                }
+                if (attemptNoEngageOption3.isChecked()){
+                    endgameDockingNotEngagedBoolean = true;
+                }
+                else {
+                    endgameDockingNotEngagedBoolean = false;
+                }
+                if (engagedOption3.isChecked()){
+                    endgameDockingEngagedBoolean = true;
+                }
+                else {
+                    endgameDockingEngagedBoolean = false;
+                }
                 SharedPreferences.Editor editor = sp.edit();
                 editor.putString("TeamNumber", teamNumberInputString);
                 editor.putString("MatchNumber", matchNumberInputString);
@@ -209,6 +275,9 @@ public class EndScreen extends AppCompatActivity {
                 editor.putString("EndgameLowerScore", endgameLowerInputScoreString);
                 editor.putBoolean("EndgameGroundCheck", endgameGroundLoadsBoolean);
                 editor.putBoolean("EndgameHumanCheck", endgameHumanLoadsBoolean);
+                editor.putBoolean("EndgameNoClimbAttempted", endgameNoDockingBoolean);
+                editor.putBoolean("EndgameClimbAttemptedNotEngaged", endgameDockingNotEngagedBoolean);
+                editor.putBoolean("EndgameClimbAttemptedEngaged", endgameDockingEngagedBoolean);
                 editor.commit();
 
                 //screen will be changed to teleop screen
@@ -237,6 +306,25 @@ public class EndScreen extends AppCompatActivity {
                 else {
                     endgameHumanLoadsBoolean = false;
                 }
+
+                if (noAttemptOption3.isChecked()){
+                    endgameNoDockingBoolean = true;
+                }
+                else {
+                    endgameNoDockingBoolean = false;
+                }
+                if (attemptNoEngageOption3.isChecked()){
+                    endgameDockingNotEngagedBoolean = true;
+                }
+                else {
+                    endgameDockingNotEngagedBoolean = false;
+                }
+                if (engagedOption3.isChecked()){
+                    endgameDockingEngagedBoolean = true;
+                }
+                else {
+                    endgameDockingEngagedBoolean = false;
+                }
                 SharedPreferences.Editor editor = sp.edit();
                 editor.putString("TeamNumber", teamNumberInputString);
                 editor.putString("MatchNumber", matchNumberInputString);
@@ -245,6 +333,9 @@ public class EndScreen extends AppCompatActivity {
                 editor.putString("EndgameLowerScore", endgameLowerInputScoreString);
                 editor.putBoolean("EndgameGroundCheck", endgameGroundLoadsBoolean);
                 editor.putBoolean("EndgameHumanCheck", endgameHumanLoadsBoolean);
+                editor.putBoolean("EndgameNoClimbAttempted", endgameNoDockingBoolean);
+                editor.putBoolean("EndgameClimbAttemptedNotEngaged", endgameDockingNotEngagedBoolean);
+                editor.putBoolean("EndgameClimbAttemptedEngaged", endgameDockingEngagedBoolean);
                 editor.commit();
 
                 //screen will be changed to qrcode screen
