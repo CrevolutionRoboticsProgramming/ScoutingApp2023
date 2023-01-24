@@ -83,11 +83,11 @@ public class EndScreen extends AppCompatActivity {
         groundCheck3 = findViewById(R.id.endgameGroundCheck);
         humanCheck3 = findViewById(R.id.endgameHumanCheck);
 
-        docking3 = findViewById(R.id.g);
+        docking3 = findViewById(R.id.endgameDockingOptions);
 
-        noAttemptOption3 = findViewById(R.id.ges);
-        attemptNoEngageOption3 = findViewById(R.id.ws);
-        engagedOption3 = findViewById(R.id.dj);
+        noAttemptOption3 = findViewById(R.id.endgameNoAttempt);
+        attemptNoEngageOption3 = findViewById(R.id.endgameDockedNotEngagedOption);
+        engagedOption3 = findViewById(R.id.endgameDockedEngagedOption);
 
 
         //getting shared preferences

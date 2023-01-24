@@ -132,6 +132,30 @@ public class QRCommentsScreen extends AppCompatActivity {
         nextMatchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putString("TeamNumber", "");
+                editor.putString("MatchNumber", "");
+                editor.putString("AutonUpperScore", "");
+                editor.putString("AutonMiddleScore", "");
+                editor.putString("AutonLowerScore", "");
+                editor.putString("TeleopUpperScore", "");
+                editor.putString("TeleopMiddleScore", "");
+                editor.putString("TeleopLowerScore", "");
+                editor.putString("EndgameUpperScore", "");
+                editor.putString("EndgameMiddleScore", "");
+                editor.putString("EndgameLowerScore", "");
+                editor.putBoolean("AutonGroundCheck", false);
+                editor.putBoolean("AutonHumanCheck", false);
+                editor.putBoolean("AutonMobilityCheck", false);
+                editor.putBoolean("TeleopGroundCheck", false);
+                editor.putBoolean("TeleopHumanCheck", false);
+                editor.putBoolean("EndgameGroundCheck", false);
+                editor.putBoolean("EndgameHumanCheck", false);
+                editor.putString("Comments", "");
+                editor.commit();
+
+
                 Intent startNewMatch = new Intent(QRCommentsScreen.this, AutonScreen.class);
                 startActivity(startNewMatch);
             }

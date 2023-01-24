@@ -28,7 +28,7 @@ public class AutonScreen extends AppCompatActivity {
     RadioButton noAttemptOption1, attemptNoEngageOption1, engagedOption1;
     SharedPreferences sp;
     String teamNumberInputString, matchNumberInputString, autonUpperInputScoreString, autonMiddleInputScoreString, autonLowerInputScoreString;
-    Boolean autonGroundLoadsBoolean, autonHumanLoadsBoolean, autonMobilityPointBoolean;
+    Boolean autonGroundLoadsBoolean, autonHumanLoadsBoolean, autonMobilityPointBoolean, autonNoDockingBoolean, autonDockingNotEngagedBoolean, autonDockingEngagedBoolean;
 
 
 
@@ -86,11 +86,11 @@ public class AutonScreen extends AppCompatActivity {
         humanCheck1 = findViewById(R.id.autonHumanCheck);
         mobilityPointCheck = findViewById(R.id.autonMobilityCheck);
 
-        docking1 = findViewById(R.id.g);
+        docking1 = findViewById(R.id.autonDockingOptions);
 
-        noAttemptOption1 = findViewById(R.id.ges);
-        attemptNoEngageOption1 = findViewById(R.id.ws);
-        engagedOption1 = findViewById(R.id.dj);
+        noAttemptOption1 = findViewById(R.id.autonNoAttemptOption);
+        attemptNoEngageOption1 = findViewById(R.id.autonDockedNotEngagedOption);
+        engagedOption1 = findViewById(R.id.autonDockedEngagedOption);
 
         //getting shared preferences
         sp = getSharedPreferences("TeamData", MODE_PRIVATE);
@@ -105,6 +105,10 @@ public class AutonScreen extends AppCompatActivity {
         groundCheck1.setChecked(new_sp.getBoolean("AutonGroundCheck", false));
         humanCheck1.setChecked(new_sp.getBoolean("AutonHumanCheck", false));
         mobilityPointCheck.setChecked(new_sp.getBoolean("AutonMobilityCheck", false));
+        noAttemptOption1.setChecked(new_sp.getBoolean("NoClimbAttempted", false));
+        attemptNoEngageOption1.setChecked(new_sp.getBoolean("ClimbAttemptedNotEngaged", false));
+        engagedOption1.setChecked(new_sp.getBoolean("ClimbAttemptedEngaged", false));
+
 
 
         //creating on click events
@@ -140,6 +144,26 @@ public class AutonScreen extends AppCompatActivity {
                 else {
                     autonMobilityPointBoolean = false;
                 }
+
+
+                if (noAttemptOption1.isChecked()){
+                    autonNoDockingBoolean = true;
+                }
+                else {
+                    autonNoDockingBoolean = false;
+                }
+                if (attemptNoEngageOption1.isChecked()){
+                    autonDockingNotEngagedBoolean = true;
+                }
+                else {
+                    autonDockingNotEngagedBoolean = false;
+                }
+                if (engagedOption1.isChecked()){
+                    autonDockingEngagedBoolean = true;
+                }
+                else {
+                    autonDockingEngagedBoolean = false;
+                }
                 //creating a editor for the sp and naming it editor
                 SharedPreferences.Editor editor = sp.edit();
                 //using the editor to store the strings and booleans in the sp (green) that can be called from other screens aswell
@@ -151,6 +175,9 @@ public class AutonScreen extends AppCompatActivity {
                 editor.putBoolean("AutonGroundCheck", autonGroundLoadsBoolean);
                 editor.putBoolean("AutonHumanCheck", autonHumanLoadsBoolean);
                 editor.putBoolean("AutonMobilityCheck", autonMobilityPointBoolean);
+                editor.putBoolean("NoClimbAttempted", autonNoDockingBoolean);
+                editor.putBoolean("ClimbAttemptedNotEngaged", autonDockingNotEngagedBoolean);
+                editor.putBoolean("ClimbAttemptedEngaged", autonDockingEngagedBoolean);
                 //updates all the sp
                 editor.commit();
 
@@ -186,6 +213,25 @@ public class AutonScreen extends AppCompatActivity {
                 else {
                     autonMobilityPointBoolean = false;
                 }
+
+                if (noAttemptOption1.isChecked()){
+                    autonNoDockingBoolean = true;
+                }
+                else {
+                    autonNoDockingBoolean = false;
+                }
+                if (attemptNoEngageOption1.isChecked()){
+                    autonDockingNotEngagedBoolean = true;
+                }
+                else {
+                    autonDockingNotEngagedBoolean = false;
+                }
+                if (engagedOption1.isChecked()){
+                    autonDockingEngagedBoolean = true;
+                }
+                else {
+                    autonDockingEngagedBoolean = false;
+                }
                 SharedPreferences.Editor editor = sp.edit();
                 editor.putString("TeamNumber", teamNumberInputString);
                 editor.putString("MatchNumber", matchNumberInputString);
@@ -195,6 +241,9 @@ public class AutonScreen extends AppCompatActivity {
                 editor.putBoolean("AutonGroundCheck", autonGroundLoadsBoolean);
                 editor.putBoolean("AutonHumanCheck", autonHumanLoadsBoolean);
                 editor.putBoolean("AutonMobilityCheck", autonMobilityPointBoolean);
+                editor.putBoolean("NoClimbAttempted", autonNoDockingBoolean);
+                editor.putBoolean("ClimbAttemptedNotEngaged", autonDockingNotEngagedBoolean);
+                editor.putBoolean("ClimbAttemptedEngaged", autonDockingEngagedBoolean);
                 editor.commit();
 
                 //screen will be changed to the teloep screen
@@ -229,6 +278,25 @@ public class AutonScreen extends AppCompatActivity {
                 else {
                     autonMobilityPointBoolean = false;
                 }
+
+                if (noAttemptOption1.isChecked()){
+                    autonNoDockingBoolean = true;
+                }
+                else {
+                    autonNoDockingBoolean = false;
+                }
+                if (attemptNoEngageOption1.isChecked()){
+                    autonDockingNotEngagedBoolean = true;
+                }
+                else {
+                    autonDockingNotEngagedBoolean = false;
+                }
+                if (engagedOption1.isChecked()){
+                    autonDockingEngagedBoolean = true;
+                }
+                else {
+                    autonDockingEngagedBoolean = false;
+                }
                 SharedPreferences.Editor editor = sp.edit();
                 editor.putString("TeamNumber", teamNumberInputString);
                 editor.putString("MatchNumber", matchNumberInputString);
@@ -238,6 +306,9 @@ public class AutonScreen extends AppCompatActivity {
                 editor.putBoolean("AutonGroundCheck", autonGroundLoadsBoolean);
                 editor.putBoolean("AutonHumanCheck", autonHumanLoadsBoolean);
                 editor.putBoolean("AutonMobilityCheck", autonMobilityPointBoolean);
+                editor.putBoolean("NoClimbAttempted", autonNoDockingBoolean);
+                editor.putBoolean("ClimbAttemptedNotEngaged", autonDockingNotEngagedBoolean);
+                editor.putBoolean("ClimbAttemptedEngaged", autonDockingEngagedBoolean);
                 editor.commit();
 
                 //screen will be changed to endgame screen
@@ -272,6 +343,25 @@ public class AutonScreen extends AppCompatActivity {
                 else {
                     autonMobilityPointBoolean = false;
                 }
+
+                if (noAttemptOption1.isChecked()){
+                    autonNoDockingBoolean = true;
+                }
+                else {
+                    autonNoDockingBoolean = false;
+                }
+                if (attemptNoEngageOption1.isChecked()){
+                    autonDockingNotEngagedBoolean = true;
+                }
+                else {
+                    autonDockingNotEngagedBoolean = false;
+                }
+                if (engagedOption1.isChecked()){
+                    autonDockingEngagedBoolean = true;
+                }
+                else {
+                    autonDockingEngagedBoolean = false;
+                }
                 SharedPreferences.Editor editor = sp.edit();
                 editor.putString("TeamNumber", teamNumberInputString);
                 editor.putString("MatchNumber", matchNumberInputString);
@@ -281,6 +371,9 @@ public class AutonScreen extends AppCompatActivity {
                 editor.putBoolean("AutonGroundCheck", autonGroundLoadsBoolean);
                 editor.putBoolean("AutonHumanCheck", autonHumanLoadsBoolean);
                 editor.putBoolean("AutonMobilityCheck", autonMobilityPointBoolean);
+                editor.putBoolean("NoClimbAttempted", autonNoDockingBoolean);
+                editor.putBoolean("ClimbAttemptedNotEngaged", autonDockingNotEngagedBoolean);
+                editor.putBoolean("ClimbAttemptedEngaged", autonDockingEngagedBoolean);
                 editor.commit();
 
                 //screen will be changed to the qrcomment screen

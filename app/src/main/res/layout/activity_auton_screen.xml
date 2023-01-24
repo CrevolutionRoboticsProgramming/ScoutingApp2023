@@ -615,7 +615,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <RadioGroup
-        android:id="@+id/g"
+        android:id="@+id/autonDockingOptions"
         android:layout_width="269dp"
         android:layout_height="308dp"
         android:layout_marginStart="729dp"
@@ -628,7 +628,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
-            android:id="@+id/ges"
+            android:id="@+id/autonNoAttemptOption"
             android:layout_width="match_parent"
             android:layout_height="86dp"
             android:fontFamily="sans-serif-medium"
@@ -638,7 +638,7 @@
             android:textSize="34sp" />
 
         <RadioButton
-            android:id="@+id/ws"
+            android:id="@+id/autonDockedNotEngagedOption"
             android:layout_width="match_parent"
             android:layout_height="101dp"
             android:fontFamily="sans-serif-medium"
@@ -648,7 +648,7 @@
             android:textSize="34sp" />
 
         <RadioButton
-            android:id="@+id/dj"
+            android:id="@+id/autonDockedEngagedOption"
             android:layout_width="match_parent"
             android:layout_height="95dp"
             android:fontFamily="sans-serif-medium"
