@@ -311,16 +311,30 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.476" />
 
+    <ImageView
+        android:id="@+id/autonCubesUpperPlus"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="317dp"
+        android:layout_marginEnd="809dp"
+        android:layout_marginBottom="218dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/plus_button_2" />
+
     <TextView
-        android:id="@+id/autonScoringTitle"
+        android:id="@+id/autonCubesScoringTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="27dp"
         android:layout_marginTop="234dp"
-        android:layout_marginEnd="719dp"
+        android:layout_marginEnd="725dp"
         android:layout_marginBottom="317dp"
         android:fontFamily="sans-serif-medium"
-        android:text="pieces scored-"
+        android:text="cubes scored-"
         android:textAllCaps="true"
         android:textColor="#C3A341"
         android:textSize="36sp"
@@ -330,7 +344,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/autonUpperTitle"
+        android:id="@+id/autonCubesUpperTitle"
         android:layout_width="121dp"
         android:layout_height="41dp"
         android:layout_marginStart="27dp"
@@ -348,7 +362,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/autonUpperInput"
+        android:id="@+id/autonCubesUpperInput"
         android:layout_width="105dp"
         android:layout_height="59dp"
         android:layout_marginStart="27dp"
@@ -367,21 +381,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/autonUpperPlus"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="317dp"
-        android:layout_marginEnd="809dp"
-        android:layout_marginBottom="218dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/plus_button_2" />
-
-    <ImageView
-        android:id="@+id/autonUpperMinus"
+        android:id="@+id/autonCubesUpperMinus"
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:layout_marginStart="226dp"
@@ -395,7 +395,7 @@
         app:srcCompat="@drawable/minus_button2" />
 
     <TextView
-        android:id="@+id/autonMiddleTitle"
+        android:id="@+id/autonCubesMiddleTitle"
         android:layout_width="132dp"
         android:layout_height="40dp"
         android:layout_marginStart="27dp"
@@ -413,7 +413,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/autonMiddleInput"
+        android:id="@+id/autonCubesMiddleInput"
         android:layout_width="105dp"
         android:layout_height="59dp"
         android:layout_marginStart="27dp"
@@ -432,7 +432,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/autonMiddlePlus"
+        android:id="@+id/autonCubesMiddlePlus"
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:layout_marginStart="150dp"
@@ -446,7 +446,7 @@
         app:srcCompat="@drawable/plus_button_2" />
 
     <ImageView
-        android:id="@+id/autonMiddleMinus"
+        android:id="@+id/autonCubesMiddleMinus"
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:layout_marginStart="226dp"
@@ -460,7 +460,7 @@
         app:srcCompat="@drawable/minus_button2" />
 
     <TextView
-        android:id="@+id/autonLowerTitle"
+        android:id="@+id/autonCubesLowerTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="27dp"
@@ -478,7 +478,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/autonLowerInput"
+        android:id="@+id/autonCubesLowerInput"
         android:layout_width="105dp"
         android:layout_height="59dp"
         android:layout_marginStart="27dp"
@@ -497,7 +497,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/autonLowerPlus"
+        android:id="@+id/autonCubesLowerPlus"
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:layout_marginStart="150dp"
@@ -511,7 +511,7 @@
         app:srcCompat="@drawable/plus_button_2" />
 
     <ImageView
-        android:id="@+id/autonLowerMinus"
+        android:id="@+id/autonCubesLowerMinus"
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:layout_marginStart="226dp"
@@ -525,144 +525,380 @@
         app:srcCompat="@drawable/minus_button2" />
 
     <TextView
-        android:id="@+id/autonLoadsTitle"
+        android:id="@+id/autonConesScoringTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="355dp"
+        android:layout_marginStart="320dp"
         android:layout_marginTop="234dp"
-        android:layout_marginEnd="436dp"
+        android:layout_marginEnd="428dp"
         android:layout_marginBottom="317dp"
         android:fontFamily="sans-serif-medium"
-        android:text="loads from-"
+        android:text="cones scored-"
         android:textAllCaps="true"
         android:textColor="#C3A341"
         android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <CheckBox
-        android:id="@+id/autonGroundCheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="355dp"
-        android:layout_marginTop="283dp"
-        android:layout_marginEnd="502dp"
-        android:layout_marginBottom="269dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="ground"
-        android:textAllCaps="true"
-        android:textColor="#E3CEA6"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <CheckBox
-        android:id="@+id/autonHumanCheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="355dp"
-        android:layout_marginTop="331dp"
-        android:layout_marginEnd="383dp"
-        android:layout_marginBottom="221dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="human player"
-        android:textAllCaps="true"
-        android:textColor="#E2B9A9"
-        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/autonPicksUpTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="355dp"
-        android:layout_marginTop="392dp"
-        android:layout_marginEnd="499dp"
-        android:layout_marginBottom="159dp"
+        android:id="@+id/autonConesUpperTitle"
+        android:layout_width="121dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="320dp"
+        android:layout_marginTop="280dp"
+        android:layout_marginEnd="583dp"
+        android:layout_marginBottom="279dp"
         android:fontFamily="sans-serif-medium"
-        android:text="picks up-"
-        android:textAllCaps="true"
-        android:textColor="#C3A341"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <CheckBox
-        android:id="@+id/autonCubePickupCheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="355dp"
-        android:layout_marginTop="441dp"
-        android:layout_marginEnd="532dp"
-        android:layout_marginBottom="111dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="cubes"
+        android:text="upper:"
         android:textAllCaps="true"
         android:textColor="#E3CEA6"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/autonConesUpperInput"
+        android:layout_width="105dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="320dp"
+        android:layout_marginTop="315dp"
+        android:layout_marginEnd="599dp"
+        android:layout_marginBottom="226dp"
+        android:ems="10"
+        android:hint="#"
+        android:inputType="number"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <CheckBox
-        android:id="@+id/autonConePickupCheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="355dp"
-        android:layout_marginTop="490dp"
-        android:layout_marginEnd="528dp"
-        android:layout_marginBottom="62dp"
+    <ImageView
+        android:id="@+id/autonConesUpperPlus"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="452dp"
+        android:layout_marginTop="309dp"
+        android:layout_marginEnd="507dp"
+        android:layout_marginBottom="226dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/plus_button_2" />
+
+    <ImageView
+        android:id="@+id/autonConesUpperMinus"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="531dp"
+        android:layout_marginTop="309dp"
+        android:layout_marginEnd="428dp"
+        android:layout_marginBottom="226dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/minus_button2" />
+
+    <TextView
+        android:id="@+id/autonConesMiddleTitle"
+        android:layout_width="132dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="320dp"
+        android:layout_marginTop="364dp"
+        android:layout_marginEnd="572dp"
+        android:layout_marginBottom="196dp"
         android:fontFamily="sans-serif-medium"
-        android:text="cones"
+        android:text="middle:"
         android:textAllCaps="true"
         android:textColor="#E2B9A9"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/autonConesMiddleInput"
+        android:layout_width="105dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="320dp"
+        android:layout_marginTop="398dp"
+        android:layout_marginEnd="599dp"
+        android:layout_marginBottom="143dp"
+        android:ems="10"
+        android:hint="#"
+        android:inputType="number"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <CheckBox
-        android:id="@+id/autonTippedConePickupCheck"
+    <ImageView
+        android:id="@+id/autonConesMiddlePlus"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="452dp"
+        android:layout_marginTop="392dp"
+        android:layout_marginEnd="507dp"
+        android:layout_marginBottom="143dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/plus_button_2" />
+
+    <ImageView
+        android:id="@+id/autonConesMiddleMinus"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="531dp"
+        android:layout_marginTop="392dp"
+        android:layout_marginEnd="428dp"
+        android:layout_marginBottom="143dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/minus_button2" />
+
+    <TextView
+        android:id="@+id/autonConesLowerTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="355dp"
-        android:layout_marginTop="538dp"
-        android:layout_marginEnd="404dp"
-        android:layout_marginBottom="14dp"
+        android:layout_marginStart="320dp"
+        android:layout_marginTop="449dp"
+        android:layout_marginEnd="597dp"
+        android:layout_marginBottom="110dp"
         android:fontFamily="sans-serif-medium"
-        android:text="tipped cones"
+        android:text="lower:"
         android:textAllCaps="true"
         android:textColor="#DBA892"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/autonConesLowerInput"
+        android:layout_width="105dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="320dp"
+        android:layout_marginTop="478dp"
+        android:layout_marginEnd="599dp"
+        android:layout_marginBottom="63dp"
+        android:ems="10"
+        android:hint="#"
+        android:inputType="number"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/autonConesLowerPlus"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="452dp"
+        android:layout_marginTop="475dp"
+        android:layout_marginEnd="507dp"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/plus_button_2" />
+
+    <ImageView
+        android:id="@+id/autonConesLowerMinus"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="531dp"
+        android:layout_marginTop="475dp"
+        android:layout_marginEnd="428dp"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/minus_button2" />
+
+    <CheckBox
+        android:id="@+id/autonMobilityCheck"
+        android:layout_width="287dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="320dp"
+        android:layout_marginTop="537dp"
+        android:layout_marginEnd="417dp"
+        android:layout_marginBottom="22dp"
+        android:fontFamily="sans-serif-medium"
+        android:text=" mobility point?"
+        android:textAllCaps="true"
+        android:textColor="#C3A341"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/autonFieldDropsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="626dp"
+        android:layout_marginTop="408dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="151dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/pieces_dropped_on_field"
+        android:textAllCaps="true"
+        android:textColor="#C3A341"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/autonFieldDropsInput"
+        android:layout_width="159dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="626dp"
+        android:layout_marginTop="446dp"
+        android:layout_marginEnd="241dp"
+        android:layout_marginBottom="110dp"
+        android:ems="10"
+        android:hint="#"
+        android:inputType="number"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/autonFieldDropsPlus"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="787dp"
+        android:layout_marginTop="442dp"
+        android:layout_marginEnd="182dp"
+        android:layout_marginBottom="103dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/plus_button_2" />
+
+    <ImageView
+        android:id="@+id/autonFieldDropsMinus"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="851dp"
+        android:layout_marginTop="442dp"
+        android:layout_marginEnd="118dp"
+        android:layout_marginBottom="103dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/minus_button2" />
+
+    <TextView
+        android:id="@+id/autonCommunityDropsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="625dp"
+        android:layout_marginTop="490dp"
+        android:layout_marginEnd="71dp"
+        android:layout_marginBottom="69dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/drops_in_community"
+        android:textAllCaps="true"
+        android:textColor="#C3A341"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/autonCommunityDropsInput"
+        android:layout_width="154dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="626dp"
+        android:layout_marginTop="528dp"
+        android:layout_marginEnd="244dp"
+        android:layout_marginBottom="22dp"
+        android:ems="10"
+        android:hint="#"
+        android:inputType="number"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/autonCommunityDropsPlus"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="787dp"
+        android:layout_marginTop="528dp"
+        android:layout_marginEnd="182dp"
+        android:layout_marginBottom="17dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/plus_button_2" />
+
+    <ImageView
+        android:id="@+id/autonCommunityDropsMinus"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="851dp"
+        android:layout_marginTop="528dp"
+        android:layout_marginEnd="118dp"
+        android:layout_marginBottom="17dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/minus_button2" />
 
     <TextView
         android:id="@+id/autonDockingTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="715dp"
+        android:layout_marginStart="626dp"
         android:layout_marginTop="234dp"
-        android:layout_marginEnd="140dp"
-        android:layout_marginBottom="317dp"
+        android:layout_marginEnd="258dp"
+        android:layout_marginBottom="325dp"
         android:fontFamily="sans-serif-medium"
         android:text="docking-"
         android:textAllCaps="true"
         android:textColor="#C3A341"
-        android:textSize="36sp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -670,12 +906,12 @@
 
     <RadioGroup
         android:id="@+id/autonDockingOptions"
-        android:layout_width="306dp"
-        android:layout_height="248dp"
-        android:layout_marginStart="715dp"
-        android:layout_marginTop="283dp"
-        android:layout_marginEnd="3dp"
-        android:layout_marginBottom="69dp"
+        android:layout_width="386dp"
+        android:layout_height="145dp"
+        android:layout_marginStart="626dp"
+        android:layout_marginTop="267dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="188dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -684,22 +920,22 @@
         <RadioButton
             android:id="@+id/autonNoAttemptOption"
             android:layout_width="match_parent"
-            android:layout_height="61dp"
+            android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
             android:text="no attempt"
             android:textAllCaps="true"
             android:textColor="#E3CEA6"
-            android:textSize="34sp" />
+            android:textSize="30sp" />
 
         <RadioButton
             android:id="@+id/autonDockedNotEngagedOption"
             android:layout_width="match_parent"
-            android:layout_height="96dp"
+            android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
             android:text="docked not engaged"
             android:textAllCaps="true"
             android:textColor="#E2B9A9"
-            android:textSize="34sp" />
+            android:textSize="30sp" />
 
         <RadioButton
             android:id="@+id/autonDockedEngagedOption"
@@ -709,25 +945,7 @@
             android:text="docked and engaged"
             android:textAllCaps="true"
             android:textColor="#DBA892"
-            android:textSize="34sp" />
+            android:textSize="30sp" />
     </RadioGroup>
-
-    <CheckBox
-        android:id="@+id/autonMobilityCheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="678dp"
-        android:layout_marginTop="538dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginBottom="14dp"
-        android:fontFamily="sans-serif-medium"
-        android:text=" mobility point"
-        android:textAllCaps="true"
-        android:textColor="#C3A341"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Actual Scouting App</string>
+    <string name="pieces_dropped_on_field">pieces dropped on field:</string>
+    <string name="drops_in_community">drops in community:</string>
 </resources>

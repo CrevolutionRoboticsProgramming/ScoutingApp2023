@@ -20,10 +20,9 @@ public class EndScreen extends AppCompatActivity {
 
     //creating variables for everything on the .xml file
     ImageButton autonBtn3, teleopBtn3, endgameBtn3, qrcodeBtn3;
-    TextView autonTitleTxt3, teleopTitleTxt3, endgameTitleTxt3, qrcodeTitleTxt3, endgameTitleTxt, matchNumTitle3, teamNumTitle3, endgameMatchInfoBack, scoringTitleTxt3, upperTitleTxt3, middleTitleTxt3, lowerTitleTxt3, loadsTitleTxt3, dockingTitleTxt3;
+    TextView autonTitleTxt3, teleopTitleTxt3, endgameTitleTxt3, qrcodeTitleTxt3, endgameTitleTxt, matchNumTitle3, teamNumTitle3, endgameMatchInfoBack, scoringTitleTxt3, upperTitleTxt3, middleTitleTxt3, lowerTitleTxt3, dockingTitleTxt3;
     ImageView endgameScreenBackground, endgameHomeBtnPic, endgameTitleUnderline, matchNumBack3, teamNumBack3, upperPlus3, upperMinus3, middlePlus3, middleMinus3, lowerPlus3, lowerMinus3;
     EditText matchNumInput3, teamNumInput3, upperInput3, middleInput3, lowerInput3;
-    CheckBox groundCheck3, humanCheck3;
     RadioGroup docking3;
     RadioButton noAttemptOption3, attemptNoEngageOption3, engagedOption3;
     SharedPreferences sp;
@@ -59,7 +58,6 @@ public class EndScreen extends AppCompatActivity {
         upperTitleTxt3 = findViewById(R.id.endgameUpperTitle);
         middleTitleTxt3 = findViewById(R.id.endgameMiddleTitle);
         lowerTitleTxt3 = findViewById(R.id.endgameLowerTitle);
-        loadsTitleTxt3 = findViewById(R.id.endgameLoadsTitle);
         dockingTitleTxt3 = findViewById(R.id.endgameDockingTitle);
 
         endgameScreenBackground = findViewById(R.id.endgameBackground);
@@ -80,9 +78,6 @@ public class EndScreen extends AppCompatActivity {
         middleInput3 = findViewById(R.id.endgameMiddleInput);
         lowerInput3 = findViewById(R.id.endgameLowerInput);
 
-        groundCheck3 = findViewById(R.id.endgameGroundCheck);
-        humanCheck3 = findViewById(R.id.endgameHumanCheck);
-
         docking3 = findViewById(R.id.endgameDockingOptions);
 
         noAttemptOption3 = findViewById(R.id.endgameNoAttempt);
@@ -100,8 +95,6 @@ public class EndScreen extends AppCompatActivity {
         upperInput3.setText(new_sp.getString("EndgameUpperScore", ""));
         middleInput3.setText(new_sp.getString("EndgameMiddleScore", ""));
         lowerInput3.setText(new_sp.getString("EndgameLowerScore", ""));
-        groundCheck3.setChecked(new_sp.getBoolean("EndgameGroundCheck", false));
-        humanCheck3.setChecked(new_sp.getBoolean("EndgameHumanCheck", false));
         noAttemptOption3.setChecked(new_sp.getBoolean("EndgameNoClimbAttempted", false));
         attemptNoEngageOption3.setChecked(new_sp.getBoolean("EndgameClimbAttemptedNotEngaged", false));
         engagedOption3.setChecked(new_sp.getBoolean("EndgameClimbAttemptedEngaged", false));
@@ -120,18 +113,6 @@ public class EndScreen extends AppCompatActivity {
                 endgameUpperInputScoreString = upperInput3.getText().toString();
                 endgameMiddleInputScoreString = middleInput3.getText().toString();
                 endgameLowerInputScoreString = lowerInput3.getText().toString();
-                if (groundCheck3.isChecked()) {
-                    endgameGroundLoadsBoolean = true;
-                }
-                else {
-                    endgameGroundLoadsBoolean = false;
-                }
-                if (humanCheck3.isChecked()) {
-                    endgameHumanLoadsBoolean  = true;
-                }
-                else {
-                    endgameHumanLoadsBoolean = false;
-                }
 
                 if (noAttemptOption3.isChecked()){
                     endgameNoDockingBoolean = true;
@@ -157,8 +138,6 @@ public class EndScreen extends AppCompatActivity {
                 editor.putString("EndgameUpperScore", endgameUpperInputScoreString);
                 editor.putString("EndgameMiddleScore", endgameMiddleInputScoreString);
                 editor.putString("EndgameLowerScore", endgameLowerInputScoreString);
-                editor.putBoolean("EndgameGroundCheck", endgameGroundLoadsBoolean);
-                editor.putBoolean("EndgameHumanCheck", endgameHumanLoadsBoolean);
                 editor.putBoolean("EndgameNoClimbAttempted", endgameNoDockingBoolean);
                 editor.putBoolean("EndgameClimbAttemptedNotEngaged", endgameDockingNotEngagedBoolean);
                 editor.putBoolean("EndgameClimbAttemptedEngaged", endgameDockingEngagedBoolean);
@@ -178,18 +157,6 @@ public class EndScreen extends AppCompatActivity {
                 endgameUpperInputScoreString = upperInput3.getText().toString();
                 endgameMiddleInputScoreString = middleInput3.getText().toString();
                 endgameLowerInputScoreString = lowerInput3.getText().toString();
-                if (groundCheck3.isChecked()) {
-                    endgameGroundLoadsBoolean = true;
-                }
-                else {
-                    endgameGroundLoadsBoolean = false;
-                }
-                if (humanCheck3.isChecked()) {
-                    endgameHumanLoadsBoolean  = true;
-                }
-                else {
-                    endgameHumanLoadsBoolean = false;
-                }
 
                 if (noAttemptOption3.isChecked()){
                     endgameNoDockingBoolean = true;
@@ -215,8 +182,6 @@ public class EndScreen extends AppCompatActivity {
                 editor.putString("EndgameUpperScore", endgameUpperInputScoreString);
                 editor.putString("EndgameMiddleScore", endgameMiddleInputScoreString);
                 editor.putString("EndgameLowerScore", endgameLowerInputScoreString);
-                editor.putBoolean("EndgameGroundCheck", endgameGroundLoadsBoolean);
-                editor.putBoolean("EndgameHumanCheck", endgameHumanLoadsBoolean);
                 editor.putBoolean("EndgameNoClimbAttempted", endgameNoDockingBoolean);
                 editor.putBoolean("EndgameClimbAttemptedNotEngaged", endgameDockingNotEngagedBoolean);
                 editor.putBoolean("EndgameClimbAttemptedEngaged", endgameDockingEngagedBoolean);
@@ -236,18 +201,6 @@ public class EndScreen extends AppCompatActivity {
                 endgameUpperInputScoreString = upperInput3.getText().toString();
                 endgameMiddleInputScoreString = middleInput3.getText().toString();
                 endgameLowerInputScoreString = lowerInput3.getText().toString();
-                if (groundCheck3.isChecked()) {
-                    endgameGroundLoadsBoolean = true;
-                }
-                else {
-                    endgameGroundLoadsBoolean = false;
-                }
-                if (humanCheck3.isChecked()) {
-                    endgameHumanLoadsBoolean  = true;
-                }
-                else {
-                    endgameHumanLoadsBoolean = false;
-                }
 
                 if (noAttemptOption3.isChecked()){
                     endgameNoDockingBoolean = true;
@@ -273,8 +226,6 @@ public class EndScreen extends AppCompatActivity {
                 editor.putString("EndgameUpperScore", endgameUpperInputScoreString);
                 editor.putString("EndgameMiddleScore", endgameMiddleInputScoreString);
                 editor.putString("EndgameLowerScore", endgameLowerInputScoreString);
-                editor.putBoolean("EndgameGroundCheck", endgameGroundLoadsBoolean);
-                editor.putBoolean("EndgameHumanCheck", endgameHumanLoadsBoolean);
                 editor.putBoolean("EndgameNoClimbAttempted", endgameNoDockingBoolean);
                 editor.putBoolean("EndgameClimbAttemptedNotEngaged", endgameDockingNotEngagedBoolean);
                 editor.putBoolean("EndgameClimbAttemptedEngaged", endgameDockingEngagedBoolean);
@@ -294,18 +245,6 @@ public class EndScreen extends AppCompatActivity {
                 endgameUpperInputScoreString = upperInput3.getText().toString();
                 endgameMiddleInputScoreString = middleInput3.getText().toString();
                 endgameLowerInputScoreString = lowerInput3.getText().toString();
-                if (groundCheck3.isChecked()) {
-                    endgameGroundLoadsBoolean = true;
-                }
-                else {
-                    endgameGroundLoadsBoolean = false;
-                }
-                if (humanCheck3.isChecked()) {
-                    endgameHumanLoadsBoolean  = true;
-                }
-                else {
-                    endgameHumanLoadsBoolean = false;
-                }
 
                 if (noAttemptOption3.isChecked()){
                     endgameNoDockingBoolean = true;
@@ -331,8 +270,6 @@ public class EndScreen extends AppCompatActivity {
                 editor.putString("EndgameUpperScore", endgameUpperInputScoreString);
                 editor.putString("EndgameMiddleScore", endgameMiddleInputScoreString);
                 editor.putString("EndgameLowerScore", endgameLowerInputScoreString);
-                editor.putBoolean("EndgameGroundCheck", endgameGroundLoadsBoolean);
-                editor.putBoolean("EndgameHumanCheck", endgameHumanLoadsBoolean);
                 editor.putBoolean("EndgameNoClimbAttempted", endgameNoDockingBoolean);
                 editor.putBoolean("EndgameClimbAttemptedNotEngaged", endgameDockingNotEngagedBoolean);
                 editor.putBoolean("EndgameClimbAttemptedEngaged", endgameDockingEngagedBoolean);

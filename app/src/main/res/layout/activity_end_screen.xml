@@ -310,42 +310,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <CheckBox
-        android:id="@+id/endgameTippedConePickupCheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="355dp"
-        android:layout_marginTop="538dp"
-        android:layout_marginEnd="404dp"
-        android:layout_marginBottom="14dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="tipped cones"
-        android:textAllCaps="true"
-        android:textColor="#DBA892"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <CheckBox
-        android:id="@+id/endgameConePickupCheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="355dp"
-        android:layout_marginTop="490dp"
-        android:layout_marginEnd="528dp"
-        android:layout_marginBottom="62dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="cones"
-        android:textAllCaps="true"
-        android:textColor="#E2B9A9"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/endgameScoringTitle"
         android:layout_width="wrap_content"
@@ -558,96 +522,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/minus_button2" />
-
-    <TextView
-        android:id="@+id/endgameLoadsTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="355dp"
-        android:layout_marginTop="234dp"
-        android:layout_marginEnd="436dp"
-        android:layout_marginBottom="317dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="loads from-"
-        android:textAllCaps="true"
-        android:textColor="#C3A341"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <CheckBox
-        android:id="@+id/endgameGroundCheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="355dp"
-        android:layout_marginTop="283dp"
-        android:layout_marginEnd="502dp"
-        android:layout_marginBottom="269dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="ground"
-        android:textAllCaps="true"
-        android:textColor="#E3CEA6"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <CheckBox
-        android:id="@+id/endgameHumanCheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="355dp"
-        android:layout_marginTop="331dp"
-        android:layout_marginEnd="383dp"
-        android:layout_marginBottom="221dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="human player"
-        android:textAllCaps="true"
-        android:textColor="#E2B9A9"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/endgamePicksUpTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="355dp"
-        android:layout_marginTop="392dp"
-        android:layout_marginEnd="499dp"
-        android:layout_marginBottom="159dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="picks up-"
-        android:textAllCaps="true"
-        android:textColor="#C3A341"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <CheckBox
-        android:id="@+id/endgameCubePickupCheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="355dp"
-        android:layout_marginTop="441dp"
-        android:layout_marginEnd="532dp"
-        android:layout_marginBottom="111dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="cubes"
-        android:textAllCaps="true"
-        android:textColor="#E3CEA6"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/endgameDockingTitle"
