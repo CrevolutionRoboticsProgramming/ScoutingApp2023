@@ -154,9 +154,6 @@ public class QRCommentsScreen extends AppCompatActivity {
                 editor.putString("TeleopFieldDropsScore", "");
                 editor.putString("TeleopCommunityDropsScore", "");
                 editor.putString("TeleopLoadingDropsScore", "");
-                editor.putString("EndgameUpperScore", "");
-                editor.putString("EndgameMiddleScore", "");
-                editor.putString("EndgameLowerScore", "");
                 editor.putString("Comments", "");
                 editor.putBoolean("AutonNoClimbAttempted", false);
                 editor.putBoolean("AutonClimbAttemptedNotEngaged", false);
