@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         startBtn = findViewById(R.id.start);
 
         crevolutionLogoPic = findViewById(R.id.crevLogo);
-        startScreenBackground = findViewById(R.id.autonBackground);
+        startScreenBackground = findViewById(R.id.mainActivityBack);
         startBtnUnderline = findViewById(R.id.startUnderline);
 
 

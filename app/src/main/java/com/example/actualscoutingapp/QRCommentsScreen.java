@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +12,12 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.MultiFormatWriter;
+import com.google.zxing.WriterException;
+import com.google.zxing.common.BitMatrix;
+import com.journeyapps.barcodescanner.BarcodeEncoder;
 
 public class QRCommentsScreen extends AppCompatActivity {
 
@@ -166,6 +173,205 @@ public class QRCommentsScreen extends AppCompatActivity {
 
                 Intent startNewMatch = new Intent(QRCommentsScreen.this, AutonScreen.class);
                 startActivity(startNewMatch);
+            }
+        });
+
+        generateQrcodeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                qrcodePic.setVisibility(View.INVISIBLE);
+                commentInputString = commentsBox.getText().toString();
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putString("Comments", commentInputString);
+                editor.commit();
+                SharedPreferences new_SP = getApplicationContext().getSharedPreferences("TeamData", MODE_PRIVATE);
+
+                String TeamNumberInputString, MatchNumberInputString, ScoutingCommentsString, AutonUpperCubesInputScoreString, AutonMiddleCubesInputScoreString, AutonLowerCubesInputScoreString, AutonUpperConesInputScoreString, AutonMiddleConesInputScoreString, AutonLowerConesInputScoreString, AutonFieldDropsInputScoreString, AutonCommunityDropsInputScoreString, AutonMobilityPointString, TeleopUpperCubesInputScoreString, TeleopMiddleCubesInputScoreString, TeleopLowerCubesInputScoreString, TeleopUpperConesInputScoreString, TeleopMiddleConesInputScoreString, TeleopLowerConesInputScoreString, TeleopFieldDropsInputScoreString, TeleopCommunityDropsInputScoreString, TeleopLoadingDropsInputScoreString, AutonDocking, EndgameDocking;
+                boolean AutonMobilityPointBoolean, AutonNoDockingBoolean, AutonNotEngagedDockingBoolean, AutonEngagedDockingBoolean, EndgameNoDockingBoolean, EndgameNotEngagedDockingBoolean, EndgameEngagedDockingBoolean;
+
+                TeamNumberInputString = new_SP.getString("TeamNumber", "");
+                MatchNumberInputString = new_SP.getString("MatchNumber", "");
+
+                if(new_SP.getString("AutonCubesUpperScore", "").equals("")){
+                    AutonUpperCubesInputScoreString = "0";
+                } else {
+                    AutonUpperCubesInputScoreString = new_SP.getString("AutonCubesUpperScore", "");
+                }
+
+                if(new_SP.getString("AutonCubesMiddleScore", "").equals("")){
+                    AutonMiddleCubesInputScoreString = "0";
+                } else {
+                    AutonMiddleCubesInputScoreString = new_SP.getString("AutonCubesMiddleScore", "");
+                }
+
+                if(new_SP.getString("AutonCubesLowerScore", "").equals("")){
+                    AutonLowerCubesInputScoreString = "0";
+                } else {
+                    AutonLowerCubesInputScoreString = new_SP.getString("AutonCubesLowerScore", "");
+                }
+
+                if(new_SP.getString("AutonConesUpperScore", "").equals("")){
+                    AutonUpperConesInputScoreString = "0";
+                } else {
+                    AutonUpperConesInputScoreString = new_SP.getString("AutonConesUpperScore", "");
+                }
+
+                if(new_SP.getString("AutonConesMiddleScore", "").equals("")){
+                    AutonMiddleConesInputScoreString = "0";
+                } else {
+                    AutonMiddleConesInputScoreString = new_SP.getString("AutonConesMiddleScore", "");
+                }
+
+                if(new_SP.getString("AutonConesLowerScore", "").equals("")){
+                    AutonLowerConesInputScoreString = "0";
+                } else {
+                    AutonLowerConesInputScoreString = new_SP.getString("AutonConesLowerScore", "");
+                }
+
+                if(new_SP.getString("AutonFieldDropsScore", "").equals("")){
+                    AutonFieldDropsInputScoreString = "0";
+                } else {
+                    AutonFieldDropsInputScoreString = new_SP.getString("AutonFieldDropsScore", "");
+                }
+
+                if(new_SP.getString("AutonCommunityDropsScore", "").equals("")){
+                    AutonCommunityDropsInputScoreString = "0";
+                } else {
+                    AutonCommunityDropsInputScoreString = new_SP.getString("AutonCommunityDropsScore", "");
+                }
+
+                AutonMobilityPointBoolean = new_SP.getBoolean("AutonMobilityCheck", false);
+                AutonNoDockingBoolean = new_SP.getBoolean("AutonNoClimbAttempted", false);
+                AutonNotEngagedDockingBoolean = new_SP.getBoolean("AutonClimbAttemptedNotEngaged", false);
+                AutonEngagedDockingBoolean = new_SP.getBoolean("AutonClimbAttemptedEngaged", false);
+
+                if (AutonNoDockingBoolean == true) {
+                    AutonDocking = "None";
+                } else if (AutonNotEngagedDockingBoolean == true){
+                    AutonDocking = "Not Engaged";
+                } else if (AutonEngagedDockingBoolean == true){
+                    AutonDocking = "Engaged";
+                } else {
+                    AutonDocking = "N/A";
+                }
+
+                if(AutonMobilityPointBoolean) {
+                    AutonMobilityPointString = "Yes";
+                }
+                else {
+                    AutonMobilityPointString = "No";
+                }
+
+
+                if(new_SP.getString("TeleopCubesUpperScore", "").equals("")){
+                    TeleopUpperCubesInputScoreString = "0";
+                } else {
+                    TeleopUpperCubesInputScoreString = new_SP.getString("TeleopCubesUpperScore", "");
+                }
+
+                if(new_SP.getString("TeleopCubesMiddleScore", "").equals("")){
+                    TeleopMiddleCubesInputScoreString = "0";
+                } else {
+                    TeleopMiddleCubesInputScoreString = new_SP.getString("TeleopCubesMiddleScore", "");
+                }
+
+                if(new_SP.getString("TeleopCubesLowerScore", "").equals("")){
+                    TeleopLowerCubesInputScoreString = "0";
+                } else {
+                    TeleopLowerCubesInputScoreString = new_SP.getString("TeleopCubesLowerScore", "");
+                }
+
+                if(new_SP.getString("TeleopConesUpperScore", "").equals("")){
+                    TeleopUpperConesInputScoreString = "0";
+                } else {
+                    TeleopUpperConesInputScoreString = new_SP.getString("TeleopConesUpperScore", "");
+                }
+
+                if(new_SP.getString("TeleopConesMiddleScore", "").equals("")){
+                    TeleopMiddleConesInputScoreString = "0";
+                } else {
+                    TeleopMiddleConesInputScoreString = new_SP.getString("TeleopConesMiddleScore", "");
+                }
+
+                if(new_SP.getString("TeleopConesLowerScore", "").equals("")){
+                    TeleopLowerConesInputScoreString = "0";
+                } else {
+                    TeleopLowerConesInputScoreString = new_SP.getString("TeleopConesLowerScore", "");
+                }
+
+                if(new_SP.getString("TeleopFieldDropsScore", "").equals("")){
+                    TeleopFieldDropsInputScoreString = "0";
+                } else {
+                    TeleopFieldDropsInputScoreString = new_SP.getString("TeleopFieldDropsScore", "");
+                }
+
+                if(new_SP.getString("TeleopCommunityDropsScore", "").equals("")){
+                    TeleopCommunityDropsInputScoreString = "0";
+                } else {
+                    TeleopCommunityDropsInputScoreString = new_SP.getString("TeleopCommunityDropsScore", "");
+                }
+
+                if(new_SP.getString("TeleopLoadingDropsScore", "").equals("")){
+                    TeleopLoadingDropsInputScoreString = "0";
+                } else {
+                    TeleopLoadingDropsInputScoreString = new_SP.getString("TeleopLoadingDropsScore", "");
+                }
+
+                EndgameNoDockingBoolean = new_SP.getBoolean("EndgameNoClimbAttempted", false);
+                EndgameNotEngagedDockingBoolean = new_SP.getBoolean("EndgameClimbAttemptedNotEngaged", false);
+                EndgameEngagedDockingBoolean = new_SP.getBoolean("EndgameClimbAttemptedEngaged", false);
+
+                if (EndgameNoDockingBoolean == true) {
+                    EndgameDocking = "None";
+                } else if (EndgameNotEngagedDockingBoolean == true){
+                    EndgameDocking = "Not Engaged";
+                } else if (EndgameEngagedDockingBoolean == true){
+                    EndgameDocking = "Engaged";
+                } else {
+                    EndgameDocking = "N/A";
+                }
+
+                if(new_SP.getString("Comments", "").equals("")) {
+                    ScoutingCommentsString = "N/A";
+                }
+                else{
+                    ScoutingCommentsString = new_SP.getString("Comments", "");
+                }
+
+                String finalQrOutput = TeamNumberInputString
+                        + ',' + MatchNumberInputString
+                        + ',' + AutonUpperCubesInputScoreString
+                        + ',' + AutonMiddleCubesInputScoreString
+                        + ',' + AutonLowerCubesInputScoreString
+                        + ',' + AutonUpperConesInputScoreString
+                        + ',' + AutonMiddleConesInputScoreString
+                        + ',' + AutonLowerConesInputScoreString
+                        + ',' + AutonFieldDropsInputScoreString
+                        + ',' + AutonCommunityDropsInputScoreString
+                        + ',' + AutonDocking
+                        + ',' + AutonMobilityPointString
+                        + ',' + TeleopUpperCubesInputScoreString
+                        + ',' + TeleopMiddleCubesInputScoreString
+                        + ',' + TeleopLowerCubesInputScoreString
+                        + ',' + TeleopUpperConesInputScoreString
+                        + ',' + TeleopMiddleConesInputScoreString
+                        + ',' + TeleopLowerConesInputScoreString
+                        + ',' + TeleopFieldDropsInputScoreString
+                        + ',' + TeleopCommunityDropsInputScoreString
+                        + ',' + TeleopLoadingDropsInputScoreString
+                        + ',' + EndgameDocking
+                        + ',' + ScoutingCommentsString;
+
+                MultiFormatWriter writer = new MultiFormatWriter();
+                try {
+                    BitMatrix matrix = writer.encode(finalQrOutput, BarcodeFormat.QR_CODE, 330, 330);
+                    BarcodeEncoder encoder = new BarcodeEncoder();
+                    Bitmap bitmap = encoder.createBitmap(matrix);
+                    qrcodePic.setImageBitmap(bitmap);
+                    qrcodePic.setVisibility(View.VISIBLE);
+                } catch (WriterException e) {
+                    e.printStackTrace();
+                }
             }
         });
     }

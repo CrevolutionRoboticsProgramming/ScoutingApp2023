@@ -746,7 +746,7 @@
         android:layout_marginEnd="417dp"
         android:layout_marginBottom="22dp"
         android:fontFamily="sans-serif-medium"
-        android:text=" mobility point?"
+        android:text=" mobility point"
         android:textAllCaps="true"
         android:textColor="#C3A341"
         android:textSize="30sp"
