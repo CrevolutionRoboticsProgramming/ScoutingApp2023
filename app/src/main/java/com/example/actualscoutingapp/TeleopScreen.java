@@ -16,7 +16,7 @@ public class TeleopScreen extends AppCompatActivity {
 // MORE IN DEPTH COMMENTS FOR REPEATED CODE IS ON AUTON SCREEN
 
     //test push to github test
-    //satchit was here
+    //satchit was here pt 2, pushed saturday morning
     //creating variables for everything on the .xml file
     ImageButton autonBtn2, teleopBtn2, endgameBtn2, qrcodeBtn2;
     TextView autonTitleTxt2, teleopTitleTxt2, endgameTitleTxt2, qrcodeTitleTxt2, teleopTitleTxt, matchNumTitle2, teamNumTitle2, teleopMatchInfoBack, scoringCubesTitleTxt2, upperCubesTitleTxt2, middleCubesTitleTxt2, lowerCubesTitleTxt2, scoringConesTitleTxt2, upperConesTitleTxt2, middleConesTitleTxt2, lowerConesTitleTxt2, droppedPiecesTitleTxt2, fieldDropsTitleTxt2, communityDropsTitleTxt2, loadingDropsTitleTxt2;
