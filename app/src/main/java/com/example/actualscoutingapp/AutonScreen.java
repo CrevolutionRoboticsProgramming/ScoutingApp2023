@@ -133,7 +133,6 @@ public class AutonScreen extends AppCompatActivity {
         engagedOption1.setChecked(new_sp.getBoolean("AutonClimbAttemptedEngaged", false));
 
 
-
         //creating on click events
 
         //screen changing buttons
